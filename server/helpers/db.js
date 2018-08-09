@@ -8,9 +8,8 @@ const getUsers = () => {
 const getNotifications = () => {
   return knex.select().from("notifications")
 };
+
 module.exports = {
+  getNotifications: getNotifications,
   getUsers: getUsers
-};
-module.exports = {
-  getNotifications: getNotifications
 };
