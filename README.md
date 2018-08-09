@@ -50,7 +50,7 @@ app.listen(SERVER_PORT, () => console.log(‘Example app listening on port 3000!
     `"create-seed": "knex seed:make $1"`
 23. run `./node_modules/.bin/knex init` in `server` folder in terminal
 24. run `npm run create-migration status` then
-    `npm create-seed status`
+    `npm run create-seed status`
 25. copy paste this
 
 ```js // Update with your config settings.
@@ -162,4 +162,5 @@ We use `knex` for migrations, but we created alias helpers on `package.json` to 
 
 1.  Create a migration `npm run create-migration table_name`
 2.  Create a seed `npm run create-seed table_name`
-3.  To
+3.  Too
+    npm --prefix server install & npm --prefix client install
