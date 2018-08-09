@@ -12,4 +12,12 @@ router.get("/users", (req, res) => {
     res.send(data);
   });
 });
+
+router.get("/notifications", (req, res) => {
+  db.getNotigications().then(data => {
+    res.send(data);
+  });
+});
+
+
 module.exports = router;
