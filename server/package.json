@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
+    "install": "npm install --save-dev nodemon",
+    "npm run dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 0",
     "dev": "nodemon app.js",
     "migrate": "knex migrate:latest && knex seed:run",
-    "create-migration": "knex migrate:make $1",
-    "create-seed": "knex seed:make $1"
+    "create-migration": "knex migrate:make",
+    "create-seed": "knex seed:make"
   },
   "author": "",
   "license": "ISC",
