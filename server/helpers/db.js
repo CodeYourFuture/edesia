@@ -5,7 +5,12 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
-
+const getNotifications = () => {
+  return knex.select().from("notifications")
+};
 module.exports = {
   getUsers: getUsers
+};
+module.exports = {
+  getNotifications: getNotifications
 };
