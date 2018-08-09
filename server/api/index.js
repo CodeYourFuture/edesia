@@ -14,7 +14,7 @@ router.get("/users", (req, res) => {
 });
 
 router.get("/notifications", (req, res) => {
-  db.getNotigications().then(data => {
+  db.getNotifications().then(data => {
     res.send(data);
   });
 });
