@@ -4,7 +4,19 @@ exports.seed = function (knex, Promise) {
         .del()
         .then(function () {
             // Inserts seed entries
-            notificationsList = ["pickup from Tesco Merrihil, Pickup from ASDA city centre, Pickup from KPC, Saturday Pret food pickup from Southside"];
+            notificationsList = [{
+                    notificationsId: "pickup from Tesco Merrihil"
+                },
+                {
+                    notificationsId: "Pickup from ASDA city centre"
+                },
+                {
+                    notificationsId: "Pickup from KPC"
+                },
+                {
+                    notificationsId: "Saturday Pret food pickup from Southside"
+                },
+            ];
             return knex("notifications").insert([{
                 notificationsList
             }]);
