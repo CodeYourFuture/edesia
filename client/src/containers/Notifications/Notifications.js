@@ -11,8 +11,10 @@ class Notifications extends Component {
         api.getNotifications().then(data => {
             this.setState({
                 notifications: data
-            })
-        })
+            });
+
+        });
+
     }
 
     render() {
@@ -22,12 +24,10 @@ class Notifications extends Component {
             div > {
                 this.state.notifications.map(notification => {
                     return ( < div >
+
                         <
                         p > {
-                            notifications.notificationsId
-                        } < /p> <
-                        p > {
-                            notifications.note
+                            notification.note
                         } < /p> <
                         /div>
                     )
