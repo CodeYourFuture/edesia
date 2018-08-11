@@ -3,17 +3,6 @@
   "version": "1.0.0",
   "description": "Glasgow Graduation Project - Food Drivers System",
   "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.4",
-    "express-handlebars": "^3.0.0",
-    "knex": "^0.15.2",
-    "pg": "^7.4.3",
-    "sqlite3": "^4.0.2"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.3"
-  },
   "scripts": {
     "install": "npm --prefix server install & npm --prefix client install",
     "start": "npm --prefix server run dev & npm --prefix client start",
