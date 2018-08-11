@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
 
       return knex("notifications").insert([
         {
-          note: "pickup from Tesco Merrihil"
+          note: "Pickup from Tesco Merrihil"
         },
         {
           note: "Pickup from ASDA city centre"
