@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../../helpers/api";
 
-class Notifications extends Component {
+export default class Notifications extends Component {
   state = {
     notifications: []
   };
@@ -18,9 +18,9 @@ class Notifications extends Component {
       <div>
         <h1> List of Notifications </h1>
         <div>
-          {this.state.notifications.map(notification => {
+          {this.state.notifications.map((notification, value) => {
             return (
-              <div>
+              <div key={value}>
                 <p> {notification.note} </p>
               </div>
             );
