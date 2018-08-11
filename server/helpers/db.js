@@ -9,7 +9,12 @@ const getDeliveries = () => {
   return knex.select().from("deliveries");
 };
 
+const getStores = () => {
+  return knex.select().from("stores");
+};
+
 module.exports = {
   getUsers: getUsers,
+  getStores,
   getDeliveries: getDeliveries
 };
