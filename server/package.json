@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
+    "run dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 0",
     "dev": "nodemon app.js",
     "migrate": "knex migrate:latest && knex seed:run",
@@ -20,6 +21,7 @@
     "express-handlebars": "^3.0.0",
     "knex": "^0.15.2",
     "pg": "^7.4.3",
+    "save": "^2.3.2",
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {
