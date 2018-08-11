@@ -18,11 +18,10 @@ export default class Notifications extends Component {
       <div>
         <h1> List of Notifications </h1>
         <div>
-          {this.state.notifications.map((notification, value) => {
+          {this.state.notifications.map(notification => {
             return (
-              <div key={value}>
+              <div>
                 <p> {notification.note} </p>
-                <p>{notification.notificationsID}</p>
               </div>
             );
           })}
