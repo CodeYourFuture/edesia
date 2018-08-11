@@ -19,9 +19,11 @@ class Home extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Edesia</h1>
         </header>
-        <p className="App-intro">
-          {this.state.users.map(user => <p>{user.name} </p>)}
-        </p>
+        <div className="App-intro">
+          {this.state.users.map((user, value) => (
+            <p key={value}>{user.name} </p>
+          ))}
+        </div>
       </div>
     );
   }
