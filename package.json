@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "description": "Glasgow Graduation Project - Food Drivers System",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
   "scripts": {
     "install": "npm --prefix server install & npm --prefix client install",
-    "start": "npm --prefix server run dev & npm --prefix client start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm --prefix server run dev & npm --prefix client start"
   },
   "repository": {
     "type": "git",

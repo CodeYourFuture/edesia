@@ -9,6 +9,7 @@
     "dev": "nodemon app.js",
     "migrate": "knex migrate:latest && knex seed:run",
     "create-migration": "knex migrate:make $1",
+    "recreate-db": "dropdb edesia && createdb edesia",
     "create-seed": "knex seed:make $1"
   },
   "author": "",
