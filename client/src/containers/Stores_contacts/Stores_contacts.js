@@ -16,12 +16,13 @@ export default class Stores_contacts extends Component {
   render() {
     return (
       <div>
-        <h1> Stores_contacts </h1>
+        <h1> Stores contacts </h1>
         <div>
           {this.state.storesContacts.map(storeContact => {
             return (
               <div>
-                <p> {storeContact.contactId} </p>
+                <p> {storeContact.contactId} </p>,
+                <p> {storeContact.storesId} </p>
               </div>
             );
           })}
