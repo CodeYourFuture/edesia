@@ -20,11 +20,15 @@ const getDrivers = () => {
 const getStores = () => {
   return knex.select().from("stores");
 };
+const getStoresContacts = () => {
+  return knex.select().from("stores_contacts");
+};
 
 module.exports = {
   getUsers,
   getDeliveries,
   getNotifications,
   getDrivers,
-  getStores
+  getStores,
+  getStoresContacts
 };

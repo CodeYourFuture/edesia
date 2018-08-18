@@ -7,16 +7,16 @@ exports.seed = function(knex, Promise) {
 
       return knex("stores_contacts").insert([
         {
-          contactId: " "
+          contactId: " 0001"
         },
         {
-          contactId: ""
+          contactId: " 0002"
         },
         {
-          contactId: ""
+          contactId: " 0003"
         },
         {
-          contactId: ""
+          contactId: " 0004"
         }
       ]);
     });

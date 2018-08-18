@@ -5,6 +5,7 @@ import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
 import DriversRegistration from "../Drivers/Register";
 import Notifications from "../Notifications/Notifications";
+import Stores_contacts from "../Stores_contacts/Stores_contacts";
 
 class App extends Component {
   render() {
@@ -24,12 +25,16 @@ class App extends Component {
             <li>
               <Link to="/notifications"> Notifications </Link>
             </li>
+            <li>
+              <Link to="/stores_contacts"> Stores Contacts </Link>
+            </li>
           </ul>
           <hr />
           <Route exact path="/" component={Home} />
           <Route path="/deliveries" component={Deliveries} />
           <Route path="/notifications" component={Notifications} />
           <Route path="/drivers-register" component={DriversRegistration} />
+          <Route path="/stores_contacts" component={Stores_contacts} />
         </div>
       </Router>
     );
