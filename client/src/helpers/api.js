@@ -5,3 +5,7 @@ export const getUsers = () => {
 };
 
 export const getDelivers = () => {};
+
+export const getNotifications = () => {
+  return fetch(`${API_URL}/api/notifications`).then(res => res.json());
+};
