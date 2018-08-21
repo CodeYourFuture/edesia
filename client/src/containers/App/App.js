@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
-import UpdateProfile from "../Drivers/UpdateProfile"
+import UpdateProfile from "../Drivers/UpdateProfile";
 
 class App extends Component {
   render() {
