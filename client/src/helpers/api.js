@@ -1,7 +1,7 @@
-const API_URL = process.env.REACT_APP_API_URI || "http://localhost:4000";
+const API_URL = process.env.REACT_APP_API_URI || "/";
 
 export const getUsers = () => {
-  return fetch(`${API_URL}/api/users`).then(res => res.json());
+  return fetch(`${API_URL}api/users`).then(res => res.json());
 };
 
 export const getDelivers = () => {};
