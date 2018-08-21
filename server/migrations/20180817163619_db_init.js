@@ -4,7 +4,7 @@ exports.up = async (knex, Promise) => {
     table.string("name");
     table.string("email");
     table.string("city").defaultTo("Glasgow");
-    table.string("postcode").notNullable()
+    table.string("postcode").notNullable();
     table.string("password");
   });
 

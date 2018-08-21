@@ -1,24 +1,24 @@
-import React, { Component } from "react";
-import "./UpdateProfile.css";
-import axios from "axios";
+import React, { Component } from 'react'
+import './UpdateProfile.css'
+import axios from 'axios'
 
 class Register extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
-      user_id: "",
-      name: "",
-      city: "Glasgow",
-      postcode: "",
+      user_id: '',
+      name: '',
+      city: 'Glasgow',
+      postcode: '',
       status: null
-    };
+    }
   }
 
   handleChange = e => {
-    let change = {};
-    change[e.target.name] = e.target.value;
-    this.setState(change);
-  };
+    let change = {}
+    change[e.target.name] = e.target.value
+    this.setState(change)
+  }
 
   handleSubmit = event => {
     let content = {
@@ -26,78 +26,76 @@ class Register extends Component {
       name: this.state.name,
       city: this.state.city,
       postcode: this.state.postcode
-    };
-    axios
-      .put("http://localhost:4000/api/users/user_id", content)
-      .then(response =>
-        this.setState({
-          status: response.status
-        })
-      );
-  };
+    }
+    axios.put('/api/users/user_id', content).then(response =>
+      this.setState({
+        status: response.status
+      })
+    )
+  }
 
-  render() {
+  render () {
     return (
       <div>
-        <div className="col">
+        <div className='col'>
           <h2>Update Profile</h2>
-          <form className="form" name="form" onSubmit={this.handleSubmit}>
-            <div className="form-group">
+          <form className='form' name='form' onSubmit={this.handleSubmit}>
+            <div className='form-group'>
               <label> User ID:</label>
               <input
-                type="user_id"
-                name="user_id"
+                type='user_id'
+                name='user_id'
                 onChange={this.handleChange}
               />
             </div>
 
-            <div className="form-group">
+            <div className='form-group'>
               <label> Name:</label>
-              <input type="name" name="name" onChange={this.handleChange} />
+              <input type='name' name='name' onChange={this.handleChange} />
             </div>
 
-            <div className="form-group">
+            <div className='form-group'>
               <label>
                 City:
                 <select
-                  name="city"
-                  type="city"
+                  name='city'
+                  type='city'
                   value={this.state.value}
                   onChange={this.handleChange}
                 >
-                  <option className="form-option" value="Glasgow">
+                  <option className='form-option' value='Glasgow'>
                     Glasgow
                   </option>
-                  <option className="form-option" value="Edinburgh">
+                  <option className='form-option' value='Edinburgh'>
                     Edinburgh
                   </option>
                 </select>
               </label>
             </div>
 
-            <div className="form-group">
+            <div className='form-group'>
               <label>Postcode:</label>
               <input
-                type="postcode"
-                name="postcode"
+                type='postcode'
+                name='postcode'
                 onChange={this.handleChange}
               />
             </div>
 
-            <div className="form-group">
-              <button className="btn submit">submit </button>
+            <div className='form-group'>
+              <button className='btn submit'>submit </button>
             </div>
           </form>
           {this.state.status === 200
-            ? "Your information has been updated successfully"
+            ? 'Your information has been updated successfully'
             : null}
           {this.state.status === 502
-            ? "An error occurred while updating your profile. Please try again"
+            ? 'An error occurred while updating your profile. Please try again'
             : null}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Register;
+export default Register
