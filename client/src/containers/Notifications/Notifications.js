@@ -22,6 +22,7 @@ export default class Notifications extends Component {
             return (
               <div>
                 <p> {notification.note} </p>
+                <p>{notification.notificationsId}</p>
               </div>
             );
           })}

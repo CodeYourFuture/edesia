@@ -5,7 +5,7 @@ import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
 import UpdateProfile from "../Drivers/UpdateProfile";
 import Notifications from "../Notifications/Notifications";
-
+import Stores_contacts from "../Stores_contacts/Stores_contacts";
 
 class App extends Component {
   render() {
@@ -34,7 +34,7 @@ class App extends Component {
           <Route path="/deliveries" component={Deliveries} />
           <Route path="/drivers-register" component={UpdateProfile} />
           <Route path="/notifications" component={Notifications} />
-
+          <Route path="/stores_contacts" component={Stores_contacts} />
         </div>
       </Router>
     );
