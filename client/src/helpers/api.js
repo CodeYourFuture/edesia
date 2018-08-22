@@ -5,11 +5,11 @@ const instance = axios.create({
 });
 
 export const getUsers = () => {
-  return axios(`${API_URL}/api/users`).then(res => res.json());
+  return instance.get("/api/users").then(res => res);
 };
 
 export const getDelivers = () => {
-  return axios(`${API_URL}/api/deliveries`).then(res => res.json());
+  return instance.get("/api/deliveries").then(res => res);
 };
 export const getUserProfile = () => {
   return instance.get("/user/profile");
