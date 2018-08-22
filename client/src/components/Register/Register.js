@@ -22,18 +22,20 @@ class Register extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const { email, password, name } = this.state;
+    const { email, password, name, city, postcode } = this.state;
 
-    axios.post("/auth/register", { email, password, name }).then(result => {
-      this.props.history.push("/login");
-    });
+    axios
+      .post("/api/users", { email, password, name, city, postcode })
+      .then(result => {
+        this.props.history.push("/login");
+      });
   };
 
   render() {
     const { email, password, name } = this.state;
     return (
       <div class="container">
-        <form class="form-signin" onSubmit={this.onSubmit}>
+        <form class="form-signin">
           <h2 class="form-signin-heading">Register</h2>
           <label for="inputEmail" class="sr-only">
             Name
@@ -43,7 +45,6 @@ class Register extends Component {
             class="form-control"
             placeholder="name"
             name="name"
-            value={name}
             onChange={this.onChange}
             required
           />
@@ -55,7 +56,6 @@ class Register extends Component {
             class="form-control"
             placeholder="city"
             name="city"
-            value={city}
             onChange={this.onChange}
             required
           />
@@ -67,7 +67,6 @@ class Register extends Component {
             class="form-control"
             placeholder="postcode"
             name="postcode"
-            value={postcode}
             onChange={this.onChange}
             required
           />
@@ -79,7 +78,6 @@ class Register extends Component {
             class="form-control"
             placeholder="Email address"
             name="email"
-            value={email}
             onChange={this.onChange}
             required
           />
@@ -91,11 +89,14 @@ class Register extends Component {
             class="form-control"
             placeholder="Password"
             name="password"
-            value={password}
             onChange={this.onChange}
             required
           />
-          <button class="btn btn-lg btn-primary btn-block" type="submit">
+          <button
+            class="btn btn-lg btn-primary btn-block"
+            type="submit"
+            onClick={this.onSubmit}
+          >
             Register
           </button>
         </form>
