@@ -4,6 +4,8 @@ exports.up = async (knex, Promise) => {
     table.string("name");
     table.string("email");
     table.string("password");
+    table.string("postcode");
+    table.string("city");
   });
 
   await knex.schema.createTable("stores", table => {
