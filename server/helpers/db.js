@@ -5,6 +5,11 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
+const postUser = (name, email, password, city, postcode) => {
+  return knex("users")
+    .insert({ name, email, password, city, postcode })
+    .returning("*");
+};
 const getSingleUser = (email, password) => {
   return knex("users")
     .where({ email, password })
@@ -38,5 +43,6 @@ module.exports = {
   getStores,
   getContacts,
   getSingleUser,
-  getUserProfile
+  getUserProfile,
+  postUser
 };
