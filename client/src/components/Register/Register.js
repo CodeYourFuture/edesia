@@ -8,7 +8,9 @@ class Register extends Component {
     this.state = {
       email: "",
       password: "",
-      name: ""
+      name: "",
+      city: "",
+      postcode: ""
     };
   }
   onChange = e => {
@@ -42,6 +44,30 @@ class Register extends Component {
             placeholder="name"
             name="name"
             value={name}
+            onChange={this.onChange}
+            required
+          />
+          <label for="inputEmail" class="sr-only">
+            City
+          </label>
+          <input
+            type="city"
+            class="form-control"
+            placeholder="city"
+            name="city"
+            value={city}
+            onChange={this.onChange}
+            required
+          />
+          <label for="inputEmail" class="sr-only">
+            Postcode
+          </label>
+          <input
+            type="postcode"
+            class="form-control"
+            placeholder="postcode"
+            name="postcode"
+            value={postcode}
             onChange={this.onChange}
             required
           />
