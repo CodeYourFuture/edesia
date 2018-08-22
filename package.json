@@ -5,16 +5,26 @@
   "main": "index.js",
   "scripts": {
     "install": "npm --prefix server install & npm --prefix client install",
-    "start": "npm --prefix server run dev & npm --prefix client start"
+    "client": "npm --prefix client start",
+    "server": "npm --prefix server start",
+    "dev": "NODE_ENV=development npm run client & npm --prefix server run dev",
+    "start": "npm run server",
+    "build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build && cd ../",
+    "heroku-postbuild": "npm run build",
+    "lint": "npm --prefix client run lint & npm --prefix server run lint"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Matl2018/edesia.git"
+    "url": "git+https://github.com/CodeYourFuture/edesia.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Matl2018/edesia/issues"
+    "url": "https://github.com/CodeYourFuture/edesia/issues"
   },
-  "homepage": "https://github.com/Matl2018/edesia#readme"
+  "homepage": "https://github.com/CodeYourFuture/edesia#readme"
 }

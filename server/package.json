@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 0",
+    "lint": "eslint ./",
     "dev": "nodemon app.js",
     "migrate": "knex migrate:latest && knex seed:run",
     "rollback": "knex migrate:rollback",
@@ -26,10 +27,15 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "pg": "^7.4.3",
-    "sqlite3": "^4.0.2"
+    "pg": "^7.4.3"
   },
   "devDependencies": {
-    "nodemon": "^1.18.3"
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.2",
+    "prettier-eslint": "^8.8.2"
   }
 }

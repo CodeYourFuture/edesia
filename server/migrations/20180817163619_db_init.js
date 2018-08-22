@@ -3,6 +3,8 @@ exports.up = async (knex, Promise) => {
     table.increments("user_id");
     table.string("name");
     table.string("email");
+    table.string("city").defaultTo("Glasgow");
+    table.string("postcode").notNullable();
     table.string("password");
     table.string("postcode");
     table.string("city");
