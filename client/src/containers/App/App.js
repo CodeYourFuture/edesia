@@ -34,11 +34,11 @@ class App extends Component {
             <li>
               <Link to="/">Home</Link>
             </li>
-            {token ? (
-              <li>
-                <Link to="/deliveries">Deliveries</Link>
-              </li>
-            ) : null}
+
+            <li>
+              <Link to="/deliveries">Deliveries</Link>
+            </li>
+
             <li>
               <Link to="/login">Login</Link>
             </li>
