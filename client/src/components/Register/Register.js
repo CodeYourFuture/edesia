@@ -25,7 +25,13 @@ class Register extends Component {
     const { email, password, name, city, postcode } = this.state;
 
     axios
-      .post("/api/users", { email, password, name, city, postcode })
+      .post("http://localhost:4000/api/users", {
+        email,
+        password,
+        name,
+        city,
+        postcode
+      })
       .then(result => {
         this.props.history.push("/login");
       });
