@@ -10,6 +10,17 @@ const getNotifications = () => {
   return knex.select().from("notifications");
 };
 
+const getSingleUser = (email, password) => {
+  return knex("users")
+    .where({ email, password })
+    .first();
+};
+const getUserProfile = userId => {
+  return knex("users")
+    .select("user_id", "email", "name")
+    .where({ user_id: userId })
+    .first();
+};
 const getDeliveries = () => {
   return knex.select().from("deliveries");
 };
@@ -24,11 +35,30 @@ const getStoresContacts = () => {
   return knex.select().from("stores_contacts");
 };
 
+const getContacts = () => {
+  return knex.select().from("contacts");
+};
+
+const updateUser = data => {
+  return knex
+    .table("users")
+    .where("user_id", "=", data.user_id)
+    .update({
+      name: data.name,
+      email: data.email,
+      city: data.city,
+      postcode: data.postcode
+    });
+};
 module.exports = {
   getUsers,
   getDeliveries,
   getNotifications,
   getDrivers,
   getStores,
-  getStoresContacts
+  getStoresContacts,
+  getContacts,
+  updateUser,
+  getSingleUser,
+  getUserProfile
 };
