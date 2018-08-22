@@ -3,34 +3,70 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
-import DriversRegistration from "../Drivers/Register";
+import Profile from "../Profile/Profile";
+import Login from "../../components/Login/Login";
+import Register from "../../components/Register/Register";
+import axios from "axios";
 
 class App extends Component {
+  state = {
+    loggedIn: false
+  };
+  componentDidMount = async () => {
+    const token = localStorage.getItem("jwtToken");
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+    if (!token) {
+      // return this.props.history.push("/login");
+    }
+  };
+  logout = () => {
+    localStorage.removeItem("jwtToken");
+    window.location.reload();
+  };
   render() {
+    const token = localStorage.getItem("jwtToken");
+    // if (!token) return null;
     return (
       <Router>
-        <div>
+        <div className="app">
           <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
+            {token ? (
+              <li>
+                <Link to="/deliveries">Deliveries</Link>
+              </li>
+            ) : null}
             <li>
-              <Link to="/deliveries">Deliveries</Link>
+              <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/drivers-register">Drivers Registration</Link>
+              <Link to="/register">Register</Link>
             </li>
+            {token ? (
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+            ) : null}
+            {localStorage.getItem("jwtToken") && (
+              <li>
+                <button className="btn btn-primary" onClick={this.logout}>
+                  Logout
+                </button>
+              </li>
+            )}
           </ul>
-
           <hr />
-
           <Route exact path="/" component={Home} />
           <Route path="/deliveries" component={Deliveries} />
-          <Route path="/drivers-register" component={DriversRegistration} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          {token ? <Route path="/profile" component={Profile} /> : null}
         </div>
       </Router>
     );
   }
 }
-
 export default App;
