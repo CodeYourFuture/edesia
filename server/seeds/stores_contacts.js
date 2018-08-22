@@ -7,19 +7,15 @@ exports.seed = function(knex, Promise) {
 
       return knex("stores_contacts").insert([
         {
-          storesId: 1,
           contactId: "Tesco MarryHill"
         },
         {
-          storesId,
           contactId: "Tesco Springburn"
         },
         {
-          storesId,
           contactId: "Tesco City center "
         },
         {
-          storesId,
           contactId: "Tesco Drumchapel"
         }
       ]);
