@@ -7,8 +7,11 @@ const instance = axios.create({
 export const getUsers = () => {
   return instance.get("/api/users").then(res => res);
 };
+export const postUser = (email, password, name, city, postcode) => {
+  return instance.post("/api/users", { email, password, name, city, postcode });
+};
 
-export const getDelivers = () => {
+export const getDeliveries = () => {
   return instance.get("/api/deliveries").then(res => res);
 };
 export const getUserProfile = () => {
