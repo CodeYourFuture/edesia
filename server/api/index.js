@@ -15,7 +15,7 @@ router.get("/users", (req, res) => {
 });
 router.post("/users", (req, res) => {
   const body = req.body;
-  db.postUser(
+  db.saveUser(
     body.name,
     body.email,
     body.city,
