@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "../Login/Login.css";
 import { postUser } from "../../helpers/api";
 
@@ -24,14 +23,12 @@ class Register extends Component {
     e.preventDefault();
 
     const { email, password, name, city, postcode } = this.state;
-
     postUser(email, password, name, city, postcode).then(result => {
       this.props.history.push("/login");
     });
   };
 
   render() {
-    const { email, password, name } = this.state;
     return (
       <div class="container">
         <form class="form-signin">
