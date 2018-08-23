@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "../Login/Login.css";
+import { postUser } from "../../helpers/api";
 
 class Register extends Component {
   constructor() {
@@ -24,17 +25,9 @@ class Register extends Component {
 
     const { email, password, name, city, postcode } = this.state;
 
-    axios
-      .post("http://localhost:4000/api/users", {
-        email,
-        password,
-        name,
-        city,
-        postcode
-      })
-      .then(result => {
-        this.props.history.push("/login");
-      });
+    postUser(email, password, name, city, postcode).then(result => {
+      this.props.history.push("/login");
+    });
   };
 
   render() {
