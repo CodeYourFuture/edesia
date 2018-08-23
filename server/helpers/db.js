@@ -5,7 +5,7 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
-const postUser = (name, email, password, city, postcode) => {
+const saveUser = (name, email, password, city, postcode) => {
   return knex("users")
     .insert({ name, email, password, city, postcode })
     .returning("*");
@@ -56,5 +56,5 @@ module.exports = {
   updateUser,
   getSingleUser,
   getUserProfile,
-  postUser
+  saveUser
 };
