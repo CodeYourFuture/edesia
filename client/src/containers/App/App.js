@@ -8,17 +8,14 @@ import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
 import axios from "axios";
 
-
 class App extends Component {
   state = {
     loggedIn: false
   };
   componentDidMount = async () => {
     const token = localStorage.getItem("jwtToken");
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
-    if (!token) {
-      // return this.props.history.push("/login");
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
     }
   };
   logout = () => {
@@ -27,7 +24,6 @@ class App extends Component {
   };
   render() {
     const token = localStorage.getItem("jwtToken");
-    // if (!token) return null;
     return (
       <Router>
         <div className="app">
@@ -51,13 +47,13 @@ class App extends Component {
                 <Link to="/profile">Profile</Link>
               </li>
             ) : null}
-            {localStorage.getItem("jwtToken") && (
+            {token ? (
               <li>
                 <button className="btn btn-primary" onClick={this.logout}>
                   Logout
                 </button>
               </li>
-            )}
+            ) : null}
           </ul>
           <hr />
           <Route exact path="/" component={Home} />
