@@ -45,6 +45,16 @@ exports.up = async (knex, Promise) => {
   await knex.schema.createTable("status", table => {
     table.string("status");
   });
+
+  await knex.schema.createTable("notifications", table => {
+    table.increments("notificationsId");
+    table.string("note");
+  });
+
+  await knex.schema.createTable("stores_contacts", table => {
+    table.increments("storesId");
+    table.string("contactId");
+  });
 };
 
 exports.down = async (knex, Promise) => {
@@ -55,4 +65,6 @@ exports.down = async (knex, Promise) => {
   await knex.schema.dropTableIfExists("items");
   await knex.schema.dropTableIfExists("contacts");
   await knex.schema.dropTableIfExists("status");
+  await knex.schema.dropTableIfExists("notifications");
+  await knex.schema.dropTableIfExists("stores_contacts");
 };
