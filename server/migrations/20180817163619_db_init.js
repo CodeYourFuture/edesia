@@ -2,10 +2,10 @@ exports.up = async (knex, Promise) => {
   await knex.schema.createTable("users", table => {
     table.increments("user_id");
     table.string("name");
-    table.string("email");
+    table.string("email").notNullable();
     table.string("city").defaultTo("Glasgow");
     table.string("postcode").notNullable();
-    table.string("password");
+    table.string("password").notNullable();
   });
 
   await knex.schema.createTable("stores", table => {

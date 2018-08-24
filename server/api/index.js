@@ -13,6 +13,18 @@ router.get("/users", (req, res) => {
     res.send(data);
   });
 });
+router.post("/users", (req, res) => {
+  const body = req.body;
+  db.saveUser(
+    body.name,
+    body.email,
+    body.city,
+    body.password,
+    body.postcode
+  ).then(() => {
+    res.send();
+  });
+});
 
 router.get("/notifications", (req, res) => {
   db.getNotifications().then(data => {

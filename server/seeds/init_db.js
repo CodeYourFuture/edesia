@@ -18,17 +18,17 @@ exports.seed = async (knex, Promise) => {
       return knex("users").insert([
         {
           name: "mat",
-          city: "Glasgow",
-          postcode: "G20 3CC",
           email: "mat@gmail.com",
-          password: "password1"
+          password: "password1",
+          city: "Glasgow",
+          postcode: "G3 4EF"
         },
         {
           name: "awet",
-          city: "Edinburgh",
-          postcode: "E2 5FA",
           email: "awet@yahoo.com",
-          password: "password2"
+          password: "password2",
+          city: "Glasgow",
+          postcode: "G1 5EF"
         }
       ]);
     });

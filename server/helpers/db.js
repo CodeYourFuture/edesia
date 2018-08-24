@@ -5,11 +5,19 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
+<<<<<<< HEAD
 
 const getNotifications = () => {
   return knex.select().from("notifications");
 };
 
+=======
+const saveUser = (name, email, password, city, postcode) => {
+  return knex("users")
+    .insert({ name, email, password, city, postcode })
+    .returning("*");
+};
+>>>>>>> b398b81542e9991f394150b2ca178b1a3e7d34eb
 const getSingleUser = (email, password) => {
   return knex("users")
     .where({ email, password })
@@ -60,5 +68,6 @@ module.exports = {
   getContacts,
   updateUser,
   getSingleUser,
-  getUserProfile
+  getUserProfile,
+  saveUser
 };
