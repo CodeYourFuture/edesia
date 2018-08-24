@@ -87,26 +87,6 @@ exports.seed = async (knex, Promise) => {
         }
       ]);
     });
-  await knex("stores_contacts")
-    .del()
-    .then(function() {
-      // Inserts seed entries
-
-      return knex("stores_contacts").insert([
-        {
-          contactId: "Tesco MarryHill"
-        },
-        {
-          contactId: "Tesco Springburn"
-        },
-        {
-          contactId: "Tesco City center "
-        },
-        {
-          contactId: "Tesco Drumchapel"
-        }
-      ]);
-    });
 
   return knex("contacts")
     .del()
