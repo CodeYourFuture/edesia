@@ -35,7 +35,6 @@ class App extends Component {
             <li>
               <Link to="/deliveries">Deliveries</Link>
             </li>
-
             {!token ? (
               <li>
                 <Link to="/login">Login</Link>
