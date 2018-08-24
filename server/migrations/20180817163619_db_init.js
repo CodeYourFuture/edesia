@@ -52,8 +52,22 @@ exports.up = async (knex, Promise) => {
   });
 
   await knex.schema.createTable("stores_contacts", table => {
-    table.increments("storesId");
-    table.string("contactId");
+    table.increments("store_id");
+    table.increments("contact_id");
+  });
+  await knex.schema.createTable("stores", table => {
+    table.increments("store_id");
+    table
+      .foreign("contact_id")
+      .references("contact_id")
+      .inTable("stores_contacts");
+  });
+  await knex.schema.createTable("contacts", table => {
+    table.increments("contact_id");
+    table
+      .foreign("store_id")
+      .references("store_id")
+      .inTable("stores_contacts");
   });
 };
 
