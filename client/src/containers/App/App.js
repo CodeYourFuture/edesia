@@ -3,16 +3,10 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
-<<<<<<< HEAD
-import UpdateProfile from "../Drivers/UpdateProfile";
-import Notifications from "../Notifications/Notifications";
-import Stores_contacts from "../Stores_contacts/Stores_contacts";
-=======
 import Profile from "../Profile/Profile";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
 import axios from "axios";
->>>>>>> b398b81542e9991f394150b2ca178b1a3e7d34eb
 
 class App extends Component {
   state = {
@@ -46,17 +40,7 @@ class App extends Component {
               <Link to="/login">Login</Link>
             </li>
             <li>
-<<<<<<< HEAD
-              <Link to="/drivers-register"> Drivers Registration </Link>
-            </li>
-            <li>
-              <Link to="/notifications"> Notifications </Link>
-            </li>
-            <li>
-              <Link to="/stores_contacts"> Stores Contacts </Link>
-=======
               <Link to="/register">Register</Link>
->>>>>>> b398b81542e9991f394150b2ca178b1a3e7d34eb
             </li>
             {token ? (
               <li>
@@ -74,15 +58,9 @@ class App extends Component {
           <hr />
           <Route exact path="/" component={Home} />
           <Route path="/deliveries" component={Deliveries} />
-<<<<<<< HEAD
-          <Route path="/drivers-register" component={UpdateProfile} />
-          <Route path="/notifications" component={Notifications} />
-          <Route path="/stores_contacts" component={Stores_contacts} />
-=======
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           {token ? <Route path="/profile" component={Profile} /> : null}
->>>>>>> b398b81542e9991f394150b2ca178b1a3e7d34eb
         </div>
       </Router>
     );
