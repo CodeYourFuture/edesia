@@ -7,6 +7,7 @@ import Profile from "../Profile/Profile";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
 import axios from "axios";
+import Admin from "../Admin/Admin";
 
 class App extends Component {
   state = {
@@ -30,6 +31,9 @@ class App extends Component {
           <ul>
             <li>
               <Link to="/"> Home </Link>
+            </li>
+            <li>
+              <Link to="/Admin"> Edesia Admin </Link>
             </li>
 
             <li>
@@ -60,6 +64,7 @@ class App extends Component {
           <Route path="/deliveries" component={Deliveries} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/admin" component={Admin} />
           {token ? <Route path="/profile" component={Profile} /> : null}
         </div>
       </Router>
