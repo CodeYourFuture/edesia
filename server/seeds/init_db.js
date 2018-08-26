@@ -48,8 +48,8 @@ exports.seed = async (knex, Promise) => {
     .then(function() {
       // Inserts seed entries
       return knex("deliveries").insert([
-        { address: "Govan" },
-        { address: "Parkhead" }
+        { address: "Govan", deadline: "24/09/2018" },
+        { address: "Parkhead", deadline: "12/10/2018" }
       ]);
     });
   await knex("status")
