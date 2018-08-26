@@ -14,6 +14,9 @@ export const postUser = (email, password, name, city, postcode) => {
 export const getDeliveries = () => {
   return instance.get("/api/deliveries").then(res => res);
 };
+export const getDeliveryById = delivery_id => {
+  return instance.get(`/api/deliveries/${delivery_id}`);
+};
 export const getUserProfile = () => {
   return instance.get("/user/profile");
 };
