@@ -6,6 +6,7 @@ import Deliveries from "../Deliveries/Deliveries";
 import Profile from "../Profile/Profile";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
+import DeliveryDetails from "../DeliveryDetails/DeliveryDetails";
 import axios from "axios";
 
 class App extends Component {
@@ -58,6 +59,7 @@ class App extends Component {
           <hr />
           <Route exact path="/" component={Home} />
           <Route path="/deliveries" component={Deliveries} />
+          <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           {token ? <Route path="/profile" component={Profile} /> : null}
