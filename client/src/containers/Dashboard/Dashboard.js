@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DashboardLink from "../../components/DashboardLink/DashboardLink";
+import DashboardLink from "../../components/Dashboard/DashboardLink";
 
 class Dashboard extends Component {
   render() {
