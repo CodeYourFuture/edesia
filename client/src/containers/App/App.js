@@ -65,7 +65,7 @@ class App extends Component {
           <Route path="/deliveries" component={Deliveries} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/admin" component={Dashboard} />
+          <Route path="/dashboard" component={Dashboard} />
           {token ? <Route path="/profile" component={Profile} /> : null}
         </div>
       </Router>
