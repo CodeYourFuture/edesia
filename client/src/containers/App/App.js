@@ -3,12 +3,13 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
+import UpdateProfile from "../Drivers/UpdateProfile";
 
 import Profile from "../Profile/Profile";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
 import axios from "axios";
-import Dashboard from "../Dashboard/Dashboard";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 class App extends Component {
   state = {
@@ -34,7 +35,7 @@ class App extends Component {
               <Link to="/"> Home </Link>
             </li>
             <li>
-              <Link to="/dashboard"> Edesia admin </Link>
+              <Link to="/admin"> Edesia admin </Link>
             </li>
 
             <li>
@@ -63,9 +64,13 @@ class App extends Component {
           <hr />
           <Route exact path="/" component={Home} />
           <Route path="/deliveries" component={Deliveries} />
+          <Route path="/drivers" component={UpdateProfile} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/admin" component={Dashboard} />
+          <Route path="/admin/deliveries" component={Deliveries} />
+          <Route path="/admin/drivers" component={UpdateProfile} />
+
           {token ? <Route path="/profile" component={Profile} /> : null}
         </div>
       </Router>

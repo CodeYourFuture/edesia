@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 const DashboardLink = props => {
   return (
     <div>
-      <h2>{props.dashboardHead}</h2>
       <div className="row">
         <div className="col-lg-12">
-          <Link to={props.text}>
+          <Link to={props.link}>
             <button className="btn btn-primary">
               <i className="fa fa-plus fa-fw" />
-              {props.link}
+              {props.text}
             </button>
           </Link>
         </div>
