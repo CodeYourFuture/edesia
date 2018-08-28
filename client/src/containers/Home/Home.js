@@ -8,7 +8,7 @@ class Home extends Component {
           <h1 className="App-title">Welcome to Edesia</h1>
         </header>
         <p className="App-intro" />
-        <h2>Food pickups and missed pickups </h2>
+        <h2>Food pickups report </h2>
         <InfoBubble number="50" text="Deliveries this week" />
       </div>
     );
