@@ -5,9 +5,9 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
-const saveUser = (name, email, password, city, postcode) => {
+const saveUser = (name, email, city, password, postcode) => {
   return knex("users")
-    .insert({ name, email, password, city, postcode })
+    .insert({ name, email, city, password, postcode })
     .returning("*");
 };
 const getSingleUser = (email, password) => {
