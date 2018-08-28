@@ -17,7 +17,7 @@ const DashboardLink = () => {
       </div>
       <div className="row">
         <div className="col-lg-12">
-          <Link to="/admin/drivers">
+          <Link to={props.driversLink}>
             <button className="btn btn-primary">
               <i className="fa fa-plus fa-fw" /> {props.drivers}
             </button>
