@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getDeliveryById } from "../../helpers/api";
-
+import { Link } from "react-router-dom";
 class DeliveryDetails extends Component {
   constructor() {
     super();
@@ -42,7 +42,10 @@ class DeliveryDetails extends Component {
     } else {
       return (
         <div>
-          <h4> {message} </h4>
+          <h4> {message}</h4>
+          <p>
+            <Link to="/">Go back</Link>
+          </p>
         </div>
       );
     }
