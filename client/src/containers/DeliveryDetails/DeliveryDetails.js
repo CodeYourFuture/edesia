@@ -24,7 +24,16 @@ class DeliveryDetails extends Component {
   render() {
     const deliveryInfo = this.state.delivery;
     const message = "No matching delivery was found in our system";
-    if (deliveryInfo === {}) {
+    if (deliveryInfo === "") {
+      return (
+        <div>
+          <h4> {message}</h4>
+          <p>
+            <Link to="/">Go back</Link>
+          </p>
+        </div>
+      );
+    } else {
       return (
         <div>
           <h4> Delivery Details</h4>
@@ -36,15 +45,6 @@ class DeliveryDetails extends Component {
           </p>
           <p>
             Delivery deadline <strong> {deliveryInfo.deadline}</strong>
-          </p>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <h4> {message}</h4>
-          <p>
-            <Link to="/">Go back</Link>
           </p>
         </div>
       );
