@@ -4,7 +4,7 @@ class DeliveryDetails extends Component {
   constructor() {
     super();
     this.state = {
-      delivery: null,
+      delivery: {},
       message: ""
     };
   }
@@ -16,7 +16,7 @@ class DeliveryDetails extends Component {
       getDeliveryById(delivery_id).then(data => {
         console.log(data);
         this.setState({
-          delivery: data
+          delivery: data.data
         });
       });
     } catch (err) {
@@ -29,9 +29,15 @@ class DeliveryDetails extends Component {
     return (
       <div>
         <h4> Delivery Details</h4>
-        <p>{this.delivery.id} </p>
-        <p>{this.delivery.address} </p>
-        <p>{this.delivery.deadline} </p>
+        <p>
+          Delivery Id <strong>{this.state.delivery.delivery_id}</strong>
+        </p>
+        <p>
+          Delivery address <strong>{this.state.delivery.address}</strong>
+        </p>
+        <p>
+          Delivery deadline <strong> {this.state.delivery.deadline}</strong>
+        </p>
       </div>
     );
   }
