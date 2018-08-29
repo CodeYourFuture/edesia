@@ -10,7 +10,7 @@ class RootApp extends React.Component {
     return (
       <Router>
         <div>
-          <Route exact path="/" component={App} />
+          <Route path="/" component={App} />
           <Route path="/login" component={Login} />
         </div>
       </Router>
