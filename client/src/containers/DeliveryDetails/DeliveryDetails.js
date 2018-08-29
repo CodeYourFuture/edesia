@@ -10,15 +10,12 @@ class DeliveryDetails extends Component {
     };
   }
   componentDidMount() {
-    console.log(this.props);
     const delivery_id = this.props.match.params.deliveryId;
-    console.log(delivery_id);
+
     getDeliveryById(delivery_id).then(data => {
-      console.log(data);
       this.setState({
         delivery: data.data
       });
-      console.log(this.state.delivery);
     });
   }
   render() {
