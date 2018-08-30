@@ -39,7 +39,11 @@ router.get("/deliveries", async (req, res) => {
 router.get("/deliveries/:deliveryId", async (req, res) => {
   const delivery_id = req.params.deliveryId;
   const data = await db.filterDeliveryById(delivery_id);
-  res.send(data);
+  if (data) {
+    res.send(data);
+  } else {
+    res.send(404);
+  }
 });
 
 router.get("/drivers", async (req, res) => {

@@ -6,25 +6,31 @@ class DeliveryDetails extends Component {
     super();
     this.state = {
       delivery: {},
+      notFound: false,
       message: ""
     };
   }
-  componentDidMount() {
+  componentDidMount = async () => {
     const delivery_id = this.props.match.params.deliveryId;
-
-    getDeliveryById(delivery_id).then(data => {
+    try {
+      const data = await getDeliveryById(delivery_id);
       this.setState({
         delivery: data.data
       });
-    });
-  }
+    } catch (error) {
+      this.setState({
+        notFound: true,
+        message: "No matching delivery was found in our system"
+      });
+    }
+  };
+
   render() {
     const deliveryInfo = this.state.delivery;
-    const message = "No matching delivery was found in our system";
-    if (deliveryInfo === "") {
+    if (this.state.notFound) {
       return (
         <div>
-          <h4> {message}</h4>
+          <h4> {this.state.message}</h4>
           <p>
             <Link to="/">Go back</Link>
           </p>
