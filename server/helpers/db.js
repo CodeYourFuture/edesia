@@ -31,6 +31,9 @@ const getDrivers = () => {
 const getStores = () => {
   return knex.select().from("stores");
 };
+const getStoresContacts = () => {
+  return knex.select().from("stores_contacts");
+};
 
 const getContacts = () => {
   return knex.select().from("contacts");
@@ -50,8 +53,10 @@ const editUserProfile = (user_id,data) => {
 module.exports = {
   getUsers,
   getDeliveries,
+  getNotifications,
   getDrivers,
   getStores,
+  getStoresContacts,
   getContacts,
   editUserProfile,
   getSingleUser,

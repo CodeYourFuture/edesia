@@ -27,6 +27,12 @@ router.post("/users", (req, res) => {
   });
 });
 
+router.get("/notifications", (req, res) => {
+  db.getNotifications().then(data => {
+    res.send(data);
+  });
+});
+
 router.get("/stores", (req, res) => {
   db.getStores().then(data => {
     res.send(data);
@@ -41,6 +47,11 @@ router.get("/deliveries", async (req, res) => {
 router.get("/drivers", async (req, res) => {
   const data = await db.getDrivers();
   res.send(data);
+});
+router.get("/stores_contacts", (req, res) => {
+  db.getStoresContacts().then(data => {
+    res.send(data);
+  });
 });
 
 router.get("/items", (req, res) => {

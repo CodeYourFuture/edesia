@@ -1,5 +1,6 @@
-const API_URL = process.env.REACT_APP_API_URI || "/";
 const axios = require("axios");
+const API_URL = process.env.REACT_APP_API_URI || "http://localhost:4000";
+
 const instance = axios.create({
   baseURL: API_URL
 });
@@ -9,10 +10,10 @@ export const getUsers = () => {
 };
 
 export const updateUserProfile = async (user_id, content) => {
-         return await instance
-           .put(`/api/users/${user_id}`, content)
-           .then(res => res.data);
-       };
+  return await instance
+    .put(`/api/users/${user_id}`, content)
+    .then(res => res.data);
+};
 
 export const postUser = (email, password, name, city, postcode) => {
   return instance.post("/api/users", { email, password, name, city, postcode });
