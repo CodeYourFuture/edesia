@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
-import UpdateProfile from "../Drivers/UpdateProfile";
+import UpdateProfile from "../Profile/UpdateProfile";
 import Profile from "../Profile/Profile";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
@@ -22,7 +22,7 @@ class App extends Component {
   };
   logout = () => {
     localStorage.removeItem("jwtToken");
-    window.location="/";
+    window.location = "/";
   };
   render() {
     const token = localStorage.getItem("jwtToken");
