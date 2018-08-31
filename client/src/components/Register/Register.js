@@ -44,7 +44,7 @@ class Register extends Component {
             onChange={this.onChange}
             required
           />
-          <label for="inputEmail" class="sr-only">
+          <label for="inputCity" class="sr-only">
             City
           </label>
           <input
@@ -55,7 +55,7 @@ class Register extends Component {
             onChange={this.onChange}
             required
           />
-          <label for="inputEmail" class="sr-only">
+          <label for="inputPostcode" class="sr-only">
             Postcode
           </label>
           <input

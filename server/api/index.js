@@ -13,6 +13,7 @@ router.get("/users", (req, res) => {
     res.send(data);
   });
 });
+
 router.post("/users", (req, res) => {
   const body = req.body;
   db.saveUser(
@@ -50,6 +51,11 @@ router.get("/drivers", async (req, res) => {
   const data = await db.getDrivers();
   res.send(data);
 });
+router.get("/stores_contacts", (req, res) => {
+  db.getStoresContacts().then(data => {
+    res.send(data);
+  });
+});
 
 router.get("/items", (req, res) => {
   db.getItems().then(data => {});
@@ -64,7 +70,7 @@ router.get("/contacts", (req, res) => {
 router.put("/users/:user_id", async (req, res) => {
   const { body } = req;
   try {
-    await db.updateUser(body);
+    await db.editUserProfile(req.params.user_id, body);
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
     res.status(502).json({ success: false });

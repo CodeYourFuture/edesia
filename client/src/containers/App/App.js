@@ -3,11 +3,13 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
+import UpdateProfile from "../Profile/UpdateProfile";
 import Profile from "../Profile/Profile";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
 import DeliveryDetails from "../DeliveryDetails/DeliveryDetails";
 import axios from "axios";
+import Dashboard from "../../components/Dashboard/Dashboard";
 
 class App extends Component {
   state = {
@@ -21,7 +23,7 @@ class App extends Component {
   };
   logout = () => {
     localStorage.removeItem("jwtToken");
-    window.location.reload();
+    window.location = "/";
   };
   render() {
     const token = localStorage.getItem("jwtToken");
@@ -30,19 +32,25 @@ class App extends Component {
         <div className="app">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/"> Home </Link>
+            </li>
+            <li>
+              <Link to="/admin"> Edesia admin </Link>
             </li>
 
             <li>
-              <Link to="/deliveries">Deliveries</Link>
+              <Link to="/deliveries"> Deliveries </Link>
             </li>
-
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
+            {!token ? (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            ) : null}
+            {!token ? (
+              <li>
+                <Link to="/register">Register</Link>
+              </li>
+            ) : null}
             {token ? (
               <li>
                 <Link to="/profile">Profile</Link>
@@ -58,11 +66,19 @@ class App extends Component {
           </ul>
           <hr />
           <Route exact path="/" component={Home} />
+
           <Route exact path="/deliveries" component={Deliveries} />
           <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
+          <Route path="/drivers" component={UpdateProfile} />
+
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/admin" component={Dashboard} />
+          <Route path="/admin/deliveries" component={Deliveries} />
+          <Route path="/admin/drivers" component={UpdateProfile} />
+
           {token ? <Route path="/profile" component={Profile} /> : null}
+          <Route path="/profile/updateProfile" component={UpdateProfile} />
         </div>
       </Router>
     );

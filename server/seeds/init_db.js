@@ -67,6 +67,7 @@ exports.seed = async (knex, Promise) => {
         { quantity: 300, type: "vegitables" }
       ]);
     });
+
   return knex("contacts")
     .del()
     .then(function() {

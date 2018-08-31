@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { loginUser } from "../../helpers/api";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Login.css";
+
 class Login extends Component {
   constructor() {
     super();
@@ -84,4 +85,4 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+export default withRouter(Login);
