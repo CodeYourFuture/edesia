@@ -27,12 +27,6 @@ router.post("/users", (req, res) => {
   });
 });
 
-router.get("/notifications", (req, res) => {
-  db.getNotifications().then(data => {
-    res.send(data);
-  });
-});
-
 router.get("/stores", (req, res) => {
   db.getStores().then(data => {
     res.send(data);
@@ -67,7 +61,7 @@ router.get("/contacts", (req, res) => {
 router.put("/users/:user_id", async (req, res) => {
   const { body } = req;
   try {
-    await db.editUserProfile(req.params.user_id,body);
+    await db.editUserProfile(req.params.user_id, body);
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
     res.status(502).json({ success: false });
