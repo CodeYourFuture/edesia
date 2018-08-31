@@ -6,7 +6,6 @@ class Deliveries extends Component {
     return (
       <div className="App">
         <h2>Deliveries </h2>
-        <DeliveryDetails />
       </div>
     );
   }
