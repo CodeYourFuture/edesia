@@ -73,6 +73,7 @@ exports.up = async (knex, Promise) => {
 
 exports.down = async (knex, Promise) => {
   await knex.schema.dropTableIfExists("users");
+  await knex.schema.dropTableIfExists("stores_contacts");
   await knex.schema.dropTableIfExists("stores");
   await knex.schema.dropTableIfExists("deliveries");
   await knex.schema.dropTableIfExists("drivers");
@@ -80,5 +81,4 @@ exports.down = async (knex, Promise) => {
   await knex.schema.dropTableIfExists("contacts");
   await knex.schema.dropTableIfExists("status");
   await knex.schema.dropTableIfExists("notifications");
-  await knex.schema.dropTableIfExists("stores_contacts");
 };
