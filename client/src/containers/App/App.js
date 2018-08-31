@@ -59,11 +59,7 @@ class App extends Component {
           <hr />
           <Route exact path="/" component={Home} />
           <Route exact path="/deliveries" component={Deliveries} />
-          <Route
-            exact
-            path="/deliveries/:deliveryId"
-            component={DeliveryDetails}
-          />
+          <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           {token ? <Route path="/profile" component={Profile} /> : null}
