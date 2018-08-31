@@ -6,7 +6,7 @@ const Dashboard = props => {
   return (
     <div>
       <h1>Edesia Admin</h1>
-      <div className="dashboardButtons">
+      <div className="dashboard-buttons">
         <DashboardLink text="Deliveries" link="/admin/deliveries" />
         <DashboardLink text="Drivers" link="/admin/drivers" />
       </div>
