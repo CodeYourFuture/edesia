@@ -23,6 +23,8 @@ exports.up = async (knex, Promise) => {
   await knex.schema.createTable("deliveries", table => {
     table.increments("delivery_id");
     table.string("address");
+    table.date("deadline");
+    table.string("status");
     table.integer("driver_id");
     table
       .foreign("driver_id")
@@ -45,14 +47,37 @@ exports.up = async (knex, Promise) => {
   await knex.schema.createTable("status", table => {
     table.string("status");
   });
+
+  await knex.schema.createTable("notifications", table => {
+    table.increments("notificationsId");
+    table.string("note");
+  });
+
+  await knex.schema.createTable("stores_contacts", table => {
+    table.integer("store_id");
+    table.integer("contact_id");
+
+    table
+      .foreign("store_id")
+      .references("store_id")
+      .inTable("stores");
+
+    table
+      .foreign("contact_id")
+      .references("contact_id")
+      .inTable("contacts");
+  });
 };
 
 exports.down = async (knex, Promise) => {
   await knex.schema.dropTableIfExists("users");
+  await knex.schema.dropTableIfExists("stores_contacts");
+
+  await knex.schema.dropTableIfExists("contacts");
   await knex.schema.dropTableIfExists("stores");
   await knex.schema.dropTableIfExists("deliveries");
   await knex.schema.dropTableIfExists("drivers");
   await knex.schema.dropTableIfExists("items");
-  await knex.schema.dropTableIfExists("contacts");
   await knex.schema.dropTableIfExists("status");
+  await knex.schema.dropTableIfExists("notifications");
 };

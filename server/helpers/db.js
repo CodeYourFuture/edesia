@@ -5,9 +5,9 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
-const saveUser = (name, email, password, city, postcode) => {
+const saveUser = (name, email, city, password, postcode) => {
   return knex("users")
-    .insert({ name, email, password, city, postcode })
+    .insert({ name, email, city, password, postcode })
     .returning("*");
 };
 const getSingleUser = (email, password) => {
@@ -24,6 +24,12 @@ const getUserProfile = userId => {
 const getDeliveries = () => {
   return knex.select().from("deliveries");
 };
+const filterDeliveryById = deliveryId => {
+  return knex("deliveries")
+    .select("delivery_id", "address", "deadline", "driver_id")
+    .where({ delivery_id: deliveryId })
+    .first();
+};
 const getDrivers = () => {
   return knex.select().from("drivers");
 };
@@ -31,15 +37,18 @@ const getDrivers = () => {
 const getStores = () => {
   return knex.select().from("stores");
 };
+const getStoresContacts = () => {
+  return knex.select().from("stores_contacts");
+};
 
 const getContacts = () => {
   return knex.select().from("contacts");
 };
 
-const updateUser = data => {
+const editUserProfile = (user_id, data) => {
   return knex
     .table("users")
-    .where("user_id", "=", data.user_id)
+    .where("user_id", "=", user_id)
     .update({
       name: data.name,
       email: data.email,
@@ -52,9 +61,11 @@ module.exports = {
   getDeliveries,
   getDrivers,
   getStores,
+  getStoresContacts,
   getContacts,
-  updateUser,
+  editUserProfile,
   getSingleUser,
   getUserProfile,
-  saveUser
+  saveUser,
+  filterDeliveryById
 };

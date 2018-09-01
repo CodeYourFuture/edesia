@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./UpdateProfile.css";
-import axios from "axios";
+import { updateUserProfile } from "../../helpers/api";
 
-class Register extends Component {
+class UpdateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_id: "",
+      user_id: null,
       name: "",
       city: "Glasgow",
       postcode: "",
@@ -20,35 +20,31 @@ class Register extends Component {
     this.setState(change);
   };
 
-  handleSubmit = event => {
+  componentDidMount() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const user_id = user.user_id;
+    this.setState({ user_id: user_id });
+  }
+
+  handleSave = event => {
+    event.preventDefault();
     let content = {
-      user_id: this.state.user_id,
       name: this.state.name,
       city: this.state.city,
       postcode: this.state.postcode
     };
-    axios.put("/api/users/user_id", content).then(response =>
-      this.setState({
-        status: response.status
-      })
+    updateUserProfile(this.state.user_id, content).then(response =>
+      this.setState({ status: response.status })
     );
+        event.target.value = "";
   };
 
   render() {
     return (
       <div>
         <div className="col">
-          <h2>Update Profile</h2>
-          <form className="form" name="form" onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <label> User ID:</label>
-              <input
-                type="user_id"
-                name="user_id"
-                onChange={this.handleChange}
-              />
-            </div>
-
+          <h2>Edit Profile</h2>
+          <form className="form" name="form" onSubmit={this.handleSave}>
             <div className="form-group">
               <label> Name:</label>
               <input type="name" name="name" onChange={this.handleChange} />
@@ -83,7 +79,7 @@ class Register extends Component {
             </div>
 
             <div className="form-group">
-              <button className="btn submit">submit </button>
+              <button className="btn submit">Update Profile </button>
             </div>
           </form>
           {this.state.status === 200
@@ -98,4 +94,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default UpdateProfile;

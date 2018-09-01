@@ -48,8 +48,18 @@ exports.seed = async (knex, Promise) => {
     .then(function() {
       // Inserts seed entries
       return knex("deliveries").insert([
-        { address: "Govan" },
-        { address: "Parkhead" }
+        {
+          address: "Govan",
+          deadline: "2018-09-24T03:24:00",
+          status: "Delivered",
+          driver_id: 14
+        },
+        {
+          address: "Parkhead",
+          deadline: "2018-10-12T03:24:00",
+          status: "Pending",
+          driver_id: 22
+        }
       ]);
     });
   await knex("status")
@@ -67,6 +77,7 @@ exports.seed = async (knex, Promise) => {
         { quantity: 300, type: "vegitables" }
       ]);
     });
+
   return knex("contacts")
     .del()
     .then(function() {
