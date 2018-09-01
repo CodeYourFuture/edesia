@@ -5,17 +5,19 @@ import "./Info.css";
 const InfoBubble = props => {
   return (
     <div className="container">
-      <div className="info">
-        <h2>{props.number}</h2>
-        <h3>{props.text}</h3>
-      </div>
-      <div className="info">
-        <h2>40</h2>
-        <h3>Succesfull deliveries</h3>
-      </div>
-      <div className="info">
-        <h2>10</h2>
-        <h3>Missed deliveries</h3>
+      <div className="row">
+        <div className="col-sm">
+          <h2>{props.number}</h2>
+          <h3>{props.text}</h3>
+        </div>
+        <div className="col-sm">
+          <h2>40</h2>
+          <h3>Succesfull deliveries</h3>
+        </div>
+        <div className="col-sm">
+          <h2>10</h2>
+          <h3>Missed deliveries</h3>
+        </div>
       </div>
     </div>
   );
