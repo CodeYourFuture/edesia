@@ -11,6 +11,7 @@ import DeliveryDetails from "../DeliveryDetails/DeliveryDetails";
 import axios from "axios";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import DeliveriesAdmin from "../DeliveriesAdmin/DeliveriesAdmin";
+import HighlightedLink from "../../components/HighlightedLink/HighlightedLink";
 
 class App extends Component {
   state = {
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+          <HighlightedLink text="Register as driver" />
           <ul>
             <li>
               <Link to="/"> Home </Link>
