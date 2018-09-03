@@ -28,7 +28,7 @@ class App extends Component {
     window.location = "/";
   };
   goToDriverRegistration = () => {
-    window.location.assign("/register");
+    this.props.history.push("/register");
   };
   render() {
     const token = localStorage.getItem("jwtToken");
