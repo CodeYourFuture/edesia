@@ -12,5 +12,6 @@ const HighlightedLink = props => {
 
 export default HighlightedLink;
 HighlightedLink.PropTypes = {
-  text: PropTypes.string
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
 };
