@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getDeliveriesAdmin } from "../../helpers/api";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./Table.css";
 class DeliveriesAdmin extends Component {
   constructor() {
@@ -27,6 +27,7 @@ class DeliveriesAdmin extends Component {
       <div className="App">
         <h2> All Deliveries</h2>
         <h3>
+          {/* <Link to="/admin/deliveries/add"> Add Delivery </Link> */}
           <Link to="/admin/deliveries/add"> Add Delivery </Link>
         </h3>
 
@@ -57,4 +58,4 @@ class DeliveriesAdmin extends Component {
   }
 }
 
-export default DeliveriesAdmin;
+export default withRouter(DeliveriesAdmin);
