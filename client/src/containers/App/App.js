@@ -27,7 +27,6 @@ class App extends Component {
     localStorage.removeItem("jwtToken");
     window.location = "/";
   };
-
   render() {
     const token = localStorage.getItem("jwtToken");
     return (
