@@ -36,7 +36,7 @@ class UpdateProfile extends Component {
     updateUserProfile(this.state.user_id, content).then(response =>
       this.setState({ status: response.status })
     );
-        event.target.value = "";
+    event.target.value = "";
   };
 
   render() {
