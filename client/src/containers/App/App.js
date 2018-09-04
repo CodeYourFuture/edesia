@@ -27,18 +27,13 @@ class App extends Component {
     localStorage.removeItem("jwtToken");
     window.location = "/";
   };
-  goToDriverRegistration = () => {
-    this.props.history.push("/register");
-  };
+
   render() {
     const token = localStorage.getItem("jwtToken");
     return (
       <Router>
         <div className="app">
-          <HighlightedLink
-            text="Register as driver"
-            onClick={this.goToDriverRegistration}
-          />
+          <HighlightedLink text="Register as driver" path="/register" />
           <ul>
             <li>
               <Link to="/"> Home </Link>
