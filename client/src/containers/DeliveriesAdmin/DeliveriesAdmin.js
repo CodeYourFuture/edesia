@@ -28,7 +28,6 @@ class DeliveriesAdmin extends Component {
       <div className="App">
         <h2> All Deliveries</h2>
         <h3>
-          {/* <Link to="/admin/deliveries/add"> Add Delivery </Link> */}
           <Link to="/admin/deliveries/add"> Add Delivery </Link>
         </h3>
 
