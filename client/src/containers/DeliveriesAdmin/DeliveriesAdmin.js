@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getDeliveriesAdmin } from "../../helpers/api";
 import { Link, withRouter } from "react-router-dom";
+
 import "./Table.css";
 class DeliveriesAdmin extends Component {
   constructor() {
