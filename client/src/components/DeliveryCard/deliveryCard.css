@@ -1,0 +1,17 @@
+.delivery-card {
+  border: solid 2px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(224, 118, 86);
+  border-radius: 10px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 592px){
+  .delivery-card {
+ margin-bottom: 10px
+}
+}

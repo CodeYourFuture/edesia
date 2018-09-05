@@ -19,8 +19,8 @@ export const postUser = (email, password, name, city, postcode) => {
   return instance.post("/api/users", { email, password, name, city, postcode });
 };
 
-export const getDeliveries = () => {
-  return instance.get("/api/deliveries").then(res => res);
+export const getDeliveries = async () => {
+  return await instance.get("/api/deliveries");
 };
 export const getDeliveriesAdmin = () => {
   return instance.get("/api/admin/deliveries");

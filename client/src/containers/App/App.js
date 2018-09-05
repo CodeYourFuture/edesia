@@ -11,6 +11,7 @@ import DeliveryDetails from "../DeliveryDetails/DeliveryDetails";
 import axios from "axios";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import DeliveriesAdmin from "../DeliveriesAdmin/DeliveriesAdmin";
+import HighlightedLink from "../../components/HighlightedLink/HighlightedLink";
 
 class App extends Component {
   state = {
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <Router>
         <div className="app">
+          <HighlightedLink text="Register as driver" path="/register" />
           <ul>
             <li>
               <Link to="/"> Home </Link>
@@ -67,16 +69,13 @@ class App extends Component {
           </ul>
           <hr />
           <Route exact path="/" component={Home} />
-
           <Route exact path="/deliveries" component={Deliveries} />
           <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
-          <Route path="/drivers" component={UpdateProfile} />
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/admin" component={Dashboard} />
           <Route path="/admin/deliveries" component={DeliveriesAdmin} />
-          <Route path="/admin/drivers" component={UpdateProfile} />
 
           {token ? <Route path="/profile" component={Profile} /> : null}
           <Route path="/profile/updateProfile" component={UpdateProfile} />

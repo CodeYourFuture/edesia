@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import UpdateProfile from "./UpdateProfile";
 
 class Profile extends Component {
   render() {
     return (
       <div>
-        <div className="App">Profile page ....</div>;
-        <ul>
-          <li>
-            <Link to="/profile/updateProfile">
-              Edit Profile
-            </Link>
-          </li>
-        </ul>
+        <UpdateProfile />
       </div>
     );
   }
