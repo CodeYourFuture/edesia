@@ -24,6 +24,12 @@ const getUserProfile = userId => {
 const getDeliveries = () => {
   return knex.select().from("deliveries");
 };
+const addDeliveries = (address, deadline, status, driver_id) => {
+  return knex("users")
+    .insert({ address, deadline, status, driver_id })
+    .returning("*");
+};
+
 const filterDeliveryById = deliveryId => {
   return knex("deliveries")
     .select("delivery_id", "address", "deadline", "driver_id")
@@ -67,5 +73,6 @@ module.exports = {
   getSingleUser,
   getUserProfile,
   saveUser,
-  filterDeliveryById
+  filterDeliveryById,
+  addDeliveries
 };
