@@ -4,14 +4,14 @@ import "./InfoBubble.css";
 
 const InfoBubble = props => {
   return (
-    <div className=" container row">
+    <div className=" infoBubble row">
       <div className="info col-sm-12 col-md-3">
         <h3>
           {props.number} {props.text}
         </h3>
       </div>
       <div className="info col-sm-12 col-md-3">
-        <h3>40 Succesful deliveries</h3>
+        <h3>40 successful deliveries</h3>
       </div>
       <div className="info col-sm-12 col-md-3">
         <h3>10 Missed deliveries</h3>
