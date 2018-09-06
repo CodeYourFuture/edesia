@@ -2,13 +2,14 @@
   border: solid 2px;
   height: 100px;
   display: flex;
-  justify-content: center;
-  flex-direction: row;
   align-items: center;
-  background-color: rgb(224, 118, 86);
+  background-color: rgb(135, 224, 187);
   border-radius: 10px;
   width: 100%;
-  margin: 0 50px;
+  margin: 0 10px;
+}
+.row {
+  justify-content: center;
 }
 
 @media (max-width: 592px) {
