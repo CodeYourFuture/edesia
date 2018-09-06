@@ -41,6 +41,18 @@ router.get("/admin/deliveries", async (req, res) => {
   const data = await db.getDeliveries();
   res.send(data);
 });
+
+router.put("/admin/deliveries", (req, res) => {
+  const body = req.body;
+  db.addDeliveries(
+    body.address,
+    body.deadline,
+    body.status,
+    body.driver_id
+  ).then(() => {
+    res.send();
+  });
+});
 router.get("/deliveries/:deliveryId", async (req, res) => {
   const delivery_id = req.params.deliveryId;
   const data = await db.filterDeliveryById(delivery_id);
