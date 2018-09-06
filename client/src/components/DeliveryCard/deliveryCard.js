@@ -1,5 +1,5 @@
-import React from "react"
-import "./deliveryCard.css"
+import React from "react";
+import "./deliveryCard.css";
 import { Link } from "react-router-dom";
 
 const deliveryCard = props => (
