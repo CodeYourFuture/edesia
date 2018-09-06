@@ -22,8 +22,17 @@ export const postUser = (email, password, name, city, postcode) => {
 export const getDeliveries = () => {
   return instance.get("/api/deliveries").then(res => res);
 };
+
 export const getDeliveriesAdmin = () => {
   return instance.get("/api/admin/deliveries");
+};
+export const addDeliveries = (address, deadline, status, driver_id) => {
+  return instance.put("/api/admin/deliveries", {
+    address,
+    deadline,
+    status,
+    driver_id
+  });
 };
 export const getDeliveryById = delivery_id => {
   return instance.get(`/api/deliveries/${delivery_id}`);
