@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import { addDeliveries } from "../../helpers/api";
 
 class AddDeliveries extends Component {
   constructor() {
     super();
     this.state = {
-      date: "",
-      title: ""
+      address: "",
+      deadline: "",
+      status: "",
+      driver_id: ""
     };
   }
 
@@ -15,13 +18,13 @@ class AddDeliveries extends Component {
     this.setState(state);
   };
 
-  // onSubmit = input => {
-  //   input.preventDefault();
-  //   const { date, title } = this.state;
-  //   postDeliveries(date, title).then(result => {
-  //     this.props.history.push("/Deliveries");
-  //   });
-  // };
+  onSubmit = input => {
+    input.preventDefault();
+    const { address, deadline, status, driver_id } = this.state;
+    addDeliveries(address, deadline, status, driver_id).then(result => {
+      this.props.history.push("/admin/Deliveries");
+    });
+  };
 
   render() {
     return (
@@ -33,17 +36,51 @@ class AddDeliveries extends Component {
 
           <form class="add-deliveries-form">
             <div>
-              <label for="title">Date</label>
-              <input type="date" placeholder="Date" name="date" required />
+              <label for="address">Address</label>
+              <input
+                type="address"
+                placeholder="Address"
+                name="address"
+                onChange={this.onchange}
+                required
+              />
             </div>
             <div>
-              <label for="Title" class="sr-only">
-                Title
-              </label>
-              <input type="text" placeholder="Title" name="title" required />
+              <label for="deadline">Deadline</label>
+              <input
+                type="date"
+                placeholder="Deadline"
+                name="deadline"
+                onChange={this.onchange}
+                required
+              />
             </div>
             <div>
-              <button class="btn btn-lg btn-warning btn-block" type="submit">
+              <label for="status">Status</label>
+              <input
+                type="text"
+                placeholder="Status"
+                name="status"
+                onChange={this.onchange}
+                required
+              />
+            </div>
+            <div>
+              <label for="driver_id">Driver Id</label>
+              <input
+                type="id"
+                placeholder="Driver Id"
+                name="driver_Id"
+                onChange={this.onchange}
+                required
+              />
+            </div>
+            <div>
+              <button
+                class="btn btn-lg btn-warning btn-block"
+                type="submit"
+                onClick={this.onSubmit}
+              >
                 Save
               </button>
             </div>
