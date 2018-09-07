@@ -1,21 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Info.css";
+import "./InfoBubble.css";
 
 const InfoBubble = props => {
   return (
-    <div className="container">
-      <div className="info">
-        <h2>{props.number}</h2>
-        <h3>{props.text}</h3>
+    <div className=" info-bubble row">
+      <div className="info col-sm-12 col-md-3">
+        <h3>
+          {props.number} {props.text}
+        </h3>
       </div>
-      <div className="info">
-        <h2>40</h2>
-        <h3>Succesfull deliveries</h3>
+      <div className="info col-sm-12 col-md-3">
+        <h3>40 successful deliveries</h3>
       </div>
-      <div className="info">
-        <h2>10</h2>
-        <h3>Missed deliveries</h3>
+      <div className="info col-sm-12 col-md-3">
+        <h3>10 Missed deliveries</h3>
       </div>
     </div>
   );
