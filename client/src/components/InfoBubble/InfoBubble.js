@@ -4,7 +4,7 @@ import "./InfoBubble.css";
 
 const InfoBubble = props => {
   return (
-    <div className=" infoBubble row">
+    <div className=" info-bubble row">
       <div className="info col-sm-12 col-md-3">
         <h3>
           {props.number} {props.text}
