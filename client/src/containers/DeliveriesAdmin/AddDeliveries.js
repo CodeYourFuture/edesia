@@ -7,8 +7,7 @@ class AddDeliveries extends Component {
     this.state = {
       address: "",
       deadline: "",
-      status: "",
-      driver_id: ""
+      status: ""
     };
   }
 
@@ -65,17 +64,6 @@ class AddDeliveries extends Component {
                 className="form-control"
                 placeholder="Status"
                 name="status"
-                onChange={this.onchange}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label for="driver_id">Driver Id</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Driver Id"
-                name="driver_id"
                 onChange={this.onchange}
                 required
               />
