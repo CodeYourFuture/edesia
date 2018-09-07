@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./UpdateProfile.css";
 import { updateUserProfile } from "../../helpers/api";
 
 class UpdateProfile extends Component {
