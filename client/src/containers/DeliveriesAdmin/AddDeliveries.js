@@ -34,7 +34,7 @@ class AddDeliveries extends Component {
             <h3>Schedule a Delivery</h3>
           </div>
 
-          <form className="add-deliveries-form">
+          <form className="add-deliveries-form col-sm-2">
             <div className="form-group">
               <label for="address">Address</label>
               <input
