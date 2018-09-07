@@ -1,6 +1,3 @@
-.container {
-  display: flex;
-}
 .info {
   flex-direction: row;
   justify-content: space-around;
