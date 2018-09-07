@@ -27,7 +27,7 @@ export const getDeliveriesAdmin = () => {
   return instance.get("/api/admin/deliveries");
 };
 export const addDeliveries = (address, deadline, status) => {
-  return instance.put("/api/admin/deliveries", {
+  return instance.post("/api/admin/deliveries", {
     address,
     deadline,
     status
