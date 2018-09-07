@@ -21,6 +21,7 @@ class AddDeliveries extends Component {
   onSubmit = input => {
     input.preventDefault();
     const { address, deadline, status, driver_id } = this.state;
+
     addDeliveries(address, deadline, status, driver_id).then(result => {
       this.props.history.push("/admin/Deliveries");
     });
@@ -34,10 +35,11 @@ class AddDeliveries extends Component {
             <h3>Schedule a Delivery</h3>
           </div>
 
-          <form class="add-deliveries-form">
-            <div>
+          <form className="add-deliveries-form">
+            <div className="form-group">
               <label for="address">Address</label>
               <input
+                className="form-control"
                 type="address"
                 placeholder="Address"
                 name="address"
@@ -45,9 +47,10 @@ class AddDeliveries extends Component {
                 required
               />
             </div>
-            <div>
+            <div className="form-group">
               <label for="deadline">Deadline</label>
               <input
+                className="form-control"
                 type="date"
                 placeholder="Deadline"
                 name="deadline"
@@ -55,22 +58,24 @@ class AddDeliveries extends Component {
                 required
               />
             </div>
-            <div>
+            <div className="form-group">
               <label for="status">Status</label>
               <input
                 type="text"
+                className="form-control"
                 placeholder="Status"
                 name="status"
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div>
+            <div className="form-group">
               <label for="driver_id">Driver Id</label>
               <input
-                type="id"
+                type="text"
+                className="form-control"
                 placeholder="Driver Id"
-                name="driver_Id"
+                name="driver_id"
                 onChange={this.onchange}
                 required
               />
