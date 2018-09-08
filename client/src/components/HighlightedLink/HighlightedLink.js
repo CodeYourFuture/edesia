@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const HighlightedLink = props => {
   return (
     <div className="custom-link">
-      <Link to={props.path}>{props.text}</Link>
+      <button onClick={props.onClick}> {props.text}</button>
     </div>
   );
 };
@@ -14,5 +14,5 @@ const HighlightedLink = props => {
 export default HighlightedLink;
 HighlightedLink.propTypes = {
   text: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired
+  onClick: PropTypes.func.isRequired
 };
