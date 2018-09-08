@@ -36,9 +36,6 @@ const filterDeliveryById = deliveryId => {
     .where({ delivery_id: deliveryId })
     .first();
 };
-const getDrivers = () => {
-  return knex.select().from("drivers");
-};
 
 const getStores = () => {
   return knex.select().from("stores");
@@ -65,7 +62,7 @@ const editUserProfile = (user_id, data) => {
 module.exports = {
   getUsers,
   getDeliveries,
-  getDrivers,
+
   getStores,
   getStoresContacts,
   getContacts,
