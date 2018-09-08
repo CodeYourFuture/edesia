@@ -14,6 +14,13 @@ router.get("/users", (req, res) => {
   });
 });
 
+router.get("/users/:user_id", (req, res) => {
+  const userId = req.params.user_id;
+  db.getUserProfile(userId).then(data => {
+    res.send(data);
+  });
+})
+
 router.post("/users", (req, res) => {
   const body = req.body;
   db.saveUser(

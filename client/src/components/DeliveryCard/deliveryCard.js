@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const deliveryCard = props => (
   <div className="delivery-card col-sm-12 col-md-3 ">
     <h3>
-      <Link to="/deliveries/:delivery_id">{props.storeName}</Link>
+      <Link to={`/deliveries/${props.deliveryId}`}>{props.storeName}</Link>
     </h3>
   </div>
 );

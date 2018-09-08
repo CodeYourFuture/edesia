@@ -21,9 +21,8 @@ class Home extends Component {
     const { deliveriesList } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Edesia</h1>
-        </header>
+        <h1 className="App-title">Welcome to Edesia</h1>
+
         <p className="App-intro" />
         <h2>Food pickups report </h2>
         <InfoBubble number="50" text="Deliveries this week" />
@@ -39,7 +38,7 @@ class Home extends Component {
                     <Fragment>
                       <DeliveryCard
                         storeName={delivery.store_name}
-                        id={delivery.delivery_id}
+                        deliveryId={delivery.delivery_id}
                         address={delivery.address}
                       />
                     </Fragment>

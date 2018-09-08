@@ -37,7 +37,11 @@ export const getDeliveryById = delivery_id => {
   return instance.get(`/api/deliveries/${delivery_id}`);
 };
 export const getUserProfile = () => {
-  return instance.get("/user/profile");
+  const token = localStorage.getItem("jwtToken");
+  const AuthStr = "Bearer ".concat(token);
+  return instance.get("/user/profile", {
+    headers: { Authorization: AuthStr }
+  });
 };
 
 export const loginUser = async (email, password) => {

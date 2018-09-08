@@ -4,20 +4,25 @@
 
 .App-header {
   background-color: rgb(71, 122, 87);
-  height: 150px;
+  height: 180px;
   padding: 5px;
   color: white;
 }
-li {
-  font-size: 20px;
+
+.App-header ul {
+  list-style: none;
 }
 
-.App-title {
-  font-size: 2em;
+App-header li {
+  font-size: 20px;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.App-header a {
+  color: white
 }
 
 @keyframes App-logo-spin {
