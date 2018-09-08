@@ -58,10 +58,6 @@ router.get("/deliveries/:deliveryId", async (req, res) => {
   }
 });
 
-router.get("/drivers", async (req, res) => {
-  const data = await db.getDrivers();
-  res.send(data);
-});
 router.get("/stores_contacts", (req, res) => {
   db.getStoresContacts().then(data => {
     res.send(data);
