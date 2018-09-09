@@ -33,7 +33,6 @@ class Home extends Component {
             <div className="row delivery-row">
               {deliveriesList &&
                 deliveriesList.map(delivery => {
-                  console.log(delivery);
                   return (
                     <Fragment>
                       <DeliveryCard
