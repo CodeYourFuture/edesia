@@ -19,8 +19,6 @@ class Menu extends Component {
   };
   goToDriverRegistration = () => {
     this.props.history.push("/register");
-    console.log("working");
-    console.log(this.props.history);
   };
   render() {
     const token = localStorage.getItem("jwtToken");
@@ -30,6 +28,7 @@ class Menu extends Component {
           text="Register as driver"
           onClick={this.goToDriverRegistration}
         />
+
         <ul>
           <li>
             <Link to="/"> Home </Link>
