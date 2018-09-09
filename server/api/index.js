@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../helpers/db");
+const passport = require("passport");
 
 router.get("/status", (req, res) => {
   res.send({
@@ -19,7 +20,7 @@ router.get("/users/:user_id", (req, res) => {
   db.getUserProfile(userId).then(data => {
     res.send(data);
   });
-})
+});
 
 router.post("/users", (req, res) => {
   const body = req.body;
@@ -64,6 +65,18 @@ router.get("/deliveries/:deliveryId", async (req, res) => {
     res.send(404);
   }
 });
+
+router.put(
+  "/deliveries/:deliveryId/pickup",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    user_id = req.user.user_id;
+    const delivery_id = req.params.deliveryId;
+    db.assignDriverIdToDelivery(delivery_id, user_id).then(() => {
+      res.send();
+    });
+  }
+);
 
 router.get("/stores_contacts", (req, res) => {
   db.getStoresContacts().then(data => {
