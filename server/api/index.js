@@ -72,8 +72,8 @@ router.put(
   (req, res) => {
     user_id = req.user.user_id;
     const delivery_id = req.params.deliveryId;
-    db.assignDriverIdToDelivery(delivery_id, user_id).then(() => {
-      res.send();
+    db.assignDriverIdToDelivery(delivery_id, user_id).then(data => {
+      res.send(data.status);
     });
   }
 );
