@@ -23,7 +23,6 @@ class DeliveriesAdmin extends Component {
   onClick = () => {
     console.log("onClick working");
   };
-
   handleChange = e => {
     const val = e.target.value;
     this.setState({ status: val });
@@ -38,7 +37,6 @@ class DeliveriesAdmin extends Component {
         })
       });
     }
-    console.log(this.filteredDeliveries);
   };
   render() {
     const sortedDeliveries = this.state.filteredDeliveries.sort((a, b) => {
