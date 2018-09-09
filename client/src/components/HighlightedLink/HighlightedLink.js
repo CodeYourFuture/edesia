@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./HighlightedLink.css";
-import { Link } from "react-router-dom";
 
 const HighlightedLink = props => {
   return (
     <div className="custom-link">
-      <button onClick={props.onClick}> {props.text}</button>
+      <button className="custom-button" onClick={props.onClick}>
+        {props.text}
+      </button>
     </div>
   );
 };
