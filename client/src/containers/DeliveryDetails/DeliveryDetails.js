@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getDeliveryById } from "../../helpers/api";
 import { Link } from "react-router-dom";
+import PickupButton from "../../components/PickupButton/PickupButton";
 class DeliveryDetails extends Component {
   constructor() {
     super();
@@ -26,6 +27,7 @@ class DeliveryDetails extends Component {
   };
 
   render() {
+    const token = localStorage.getItem("jwtToken");
     const deliveryInfo = this.state.delivery;
     if (this.state.notFound) {
       return (
@@ -49,6 +51,9 @@ class DeliveryDetails extends Component {
           <p>
             Delivery deadline <strong> {deliveryInfo.deadline}</strong>
           </p>
+          {token ? (
+            <PickupButton deliveryId={deliveryInfo.delivery_id} />
+          ) : null}
         </div>
       );
     }

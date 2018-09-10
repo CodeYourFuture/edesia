@@ -1,16 +1,4 @@
 exports.seed = async (knex, Promise) => {
-  // Deletes ALL existing entries
-  await knex("drivers")
-    .del()
-    .then(function() {
-      // Inserts seed entries
-      return knex("drivers").insert([
-        { driver_id: 14, name: "Bad Khaled" },
-        { driver_id: 22, name: "Nate" },
-        { driver_id: 29, name: "Maj" }
-      ]);
-    });
-
   knex("users")
     .del()
     .then(function() {
@@ -53,21 +41,21 @@ exports.seed = async (knex, Promise) => {
           store_name: "Tesco",
           deadline: new Date("2018-09-01T03:30:00"),
           status: "Available",
-          driver_id: 14
+          driver_id: 1
         },
         {
           address: "Parkhead",
           store_name: "Aldi",
           deadline: new Date("2018-08-30T03:30:00"),
           status: "Delivered",
-          driver_id: 22
+          driver_id: 2
         },
         {
           address: "Parkhead",
           store_name: "Lidl",
           deadline: new Date("2018-08-30T03:30:00"),
           status: "Pending",
-          driver_id: 29
+          driver_id: 2
         }
       ]);
     });

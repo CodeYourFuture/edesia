@@ -36,9 +36,6 @@ const filterDeliveryById = deliveryId => {
     .where({ delivery_id: deliveryId })
     .first();
 };
-const getDrivers = () => {
-  return knex.select().from("drivers");
-};
 
 const getStores = () => {
   return knex.select().from("stores");
@@ -60,13 +57,21 @@ const editUserProfile = (user_id, data) => {
       email: data.email,
       city: data.city,
       postcode: data.postcode,
-      password:data.password,
+      password: data.password
+    });
+};
+const assignDriverIdToDelivery = (delivery_id, user_id) => {
+  return knex
+    .table("deliveries")
+    .where("delivery_id", "=", delivery_id)
+    .update({
+      driver_id: user_id
     });
 };
 module.exports = {
   getUsers,
   getDeliveries,
-  getDrivers,
+  assignDriverIdToDelivery,
   getStores,
   getStoresContacts,
   getContacts,

@@ -43,6 +43,14 @@ export const getUserProfile = () => {
     headers: { Authorization: AuthStr }
   });
 };
+export const pickupDelivery = delivery_id => {
+  const token = localStorage.getItem("jwtToken");
+  const AuthStr = "Bearer ".concat(token);
+
+  return instance.put(`/api/deliveries/${delivery_id}/pickup`, {
+    headers: { Authorization: AuthStr }
+  });
+};
 
 export const loginUser = async (email, password) => {
   const { data } = await instance.post("/auth/login", { email, password });

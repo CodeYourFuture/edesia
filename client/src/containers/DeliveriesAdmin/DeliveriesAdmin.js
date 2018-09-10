@@ -23,7 +23,6 @@ class DeliveriesAdmin extends Component {
   onClick = () => {
     console.log("onClick working");
   };
-
   handleChange = e => {
     const val = e.target.value;
     this.setState({ status: val });

@@ -6,6 +6,7 @@ exports.up = async (knex, Promise) => {
     table.string("city").defaultTo("Glasgow");
     table.string("postcode").notNullable();
     table.string("password").notNullable();
+    table.enum("role", ["admin", "driver"]);
   });
 
   await knex.schema.createTable("stores", table => {
@@ -13,11 +14,6 @@ exports.up = async (knex, Promise) => {
     table.string("area");
     table.string("city");
     table.string("address");
-  });
-
-  await knex.schema.createTable("drivers", table => {
-    table.increments("driver_id");
-    table.string("name");
   });
 
   await knex.schema.createTable("deliveries", table => {
@@ -29,8 +25,8 @@ exports.up = async (knex, Promise) => {
     table.enu("status", ["Available", "Pending", "Delivered", "Cancelled"]);
     table
       .foreign("driver_id")
-      .references("driver_id")
-      .inTable("drivers");
+      .references("user_id")
+      .inTable("users");
   });
 
   await knex.schema.createTable("items", table => {
@@ -71,12 +67,11 @@ exports.up = async (knex, Promise) => {
 };
 
 exports.down = async (knex, Promise) => {
+  await knex.schema.dropTableIfExists("deliveries");
   await knex.schema.dropTableIfExists("users");
   await knex.schema.dropTableIfExists("stores_contacts");
-
   await knex.schema.dropTableIfExists("contacts");
   await knex.schema.dropTableIfExists("stores");
-  await knex.schema.dropTableIfExists("deliveries");
   await knex.schema.dropTableIfExists("drivers");
   await knex.schema.dropTableIfExists("items");
   await knex.schema.dropTableIfExists("status");
