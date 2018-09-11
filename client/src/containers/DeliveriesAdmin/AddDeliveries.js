@@ -7,7 +7,8 @@ class AddDeliveries extends Component {
     this.state = {
       address: "",
       deadline: "",
-      status: ""
+      status: "",
+      store_name: ""
     };
   }
 
@@ -19,9 +20,9 @@ class AddDeliveries extends Component {
 
   onSubmit = input => {
     input.preventDefault();
-    const { address, deadline, status, driver_id } = this.state;
+    const { address, deadline, status, store_name } = this.state;
 
-    addDeliveries(address, deadline, status, driver_id).then(result => {
+    addDeliveries(address, deadline, status, store_name).then(result => {
       this.props.history.push("/admin/Deliveries");
     });
   };
@@ -35,6 +36,17 @@ class AddDeliveries extends Component {
           </div>
 
           <form className="add-deliveries-form col-sm-2">
+            <div className="form-group">
+              <label for="store_name">Store name</label>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Store name"
+                name="store_name"
+                onChange={this.onchange}
+                required
+              />
+            </div>
             <div className="form-group">
               <label for="address">Address</label>
               <input

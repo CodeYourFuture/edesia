@@ -26,11 +26,12 @@ export const getDeliveries = async () => {
 export const getDeliveriesAdmin = () => {
   return instance.get("/api/admin/deliveries");
 };
-export const addDeliveries = (address, deadline, status) => {
+export const addDeliveries = (address, deadline, status, store_name) => {
   return instance.post("/api/admin/deliveries", {
     address,
     deadline,
-    status
+    status,
+    store_name
   });
 };
 export const getDeliveryById = delivery_id => {

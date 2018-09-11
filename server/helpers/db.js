@@ -24,9 +24,9 @@ const getUserProfile = userId => {
 const getDeliveries = () => {
   return knex.select().from("deliveries");
 };
-const addDeliveries = (address, deadline, status, driver_id) => {
+const addDeliveries = (address, deadline, status, store_name) => {
   return knex("deliveries")
-    .insert({ address, deadline, status })
+    .insert({ address, deadline, status, store_name })
     .returning("*");
 };
 
