@@ -19,9 +19,9 @@ class AddDeliveries extends Component {
 
   onSubmit = input => {
     input.preventDefault();
-    const { address, deadline, status, driver_id } = this.state;
+    const { address, deadline, status } = this.state;
 
-    addDeliveries(address, deadline, status, driver_id).then(result => {
+    addDeliveries(address, deadline, status).then(result => {
       this.props.history.push("/admin/Deliveries");
     });
   };
@@ -49,7 +49,6 @@ class AddDeliveries extends Component {
             <div className="form-group">
               <label for="deadline">Deadline</label>
               <input
-                className="form-control"
                 type="date"
                 placeholder="Deadline"
                 name="deadline"
@@ -58,15 +57,25 @@ class AddDeliveries extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="status">Status</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Status"
-                name="status"
-                onChange={this.onchange}
-                required
-              />
+              <div>
+                <label>
+                  Status:
+                  <select
+                    name="status"
+                    type="dropdown"
+                    onChange={this.onChange}
+                    required
+                  >
+                    <option value="Available">Available</option>
+
+                    <option value="Pending">Pending</option>
+
+                    <option value="Delivered">Delivered</option>
+
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
+                </label>
+              </div>
             </div>
             <div>
               <button
