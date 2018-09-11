@@ -26,13 +26,19 @@ class PickupButton extends Component {
           message: "An error has occurred. We are working hard on fixing it"
         });
       }
-      alert(this.state.message);
     });
   };
   render() {
     return (
       <div>
         <HighlightedLink text="I can Pickup" onClick={this.onClick} />
+        <br />
+        <br />
+        {this.state.message !== "" && (
+          <div class="alert alert-info" role="alert">
+            {this.state.message}
+          </div>
+        )}
       </div>
     );
   }
