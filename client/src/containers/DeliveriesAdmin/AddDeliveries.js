@@ -63,9 +63,10 @@ class AddDeliveries extends Component {
                   <select
                     name="status"
                     type="dropdown"
-                    onChange={this.onChange}
+                    onChange={this.onchange}
                     required
                   >
+                    <option value="None">None</option>
                     <option value="Available">Available</option>
 
                     <option value="Pending">Pending</option>
