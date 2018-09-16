@@ -15,6 +15,16 @@ export const updateUserProfile = async (user_id, content) => {
     .then(res => res.data);
 };
 
+export const updateDeliveryDetail = async (delivery_id, content) => {
+  return await instance
+    .put(`/api/deliveries/${delivery_id}`, content)
+    .then(res => res.data);
+};
+
+export const deleteDelivery = async delivery_id => {
+  return await instance.delete(`/api/deliveries/${delivery_id}`);
+};
+
 export const postUser = (email, password, name, city, postcode) => {
   return instance.post("/api/users", { email, password, name, city, postcode });
 };
@@ -26,20 +36,30 @@ export const getDeliveries = async () => {
 export const getDeliveriesAdmin = () => {
   return instance.get("/api/admin/deliveries");
 };
-export const addDeliveries = (address, deadline, status) => {
+export const addDeliveries = (address, deadline, status, store_name) => {
   return instance.post("/api/admin/deliveries", {
     address,
     deadline,
-    status
+    status,
+    store_name
   });
 };
 export const getDeliveryById = delivery_id => {
   return instance.get(`/api/deliveries/${delivery_id}`);
 };
+
 export const getUserProfile = () => {
   const token = localStorage.getItem("jwtToken");
   const AuthStr = "Bearer ".concat(token);
   return instance.get("/user/profile", {
+    headers: { Authorization: AuthStr }
+  });
+};
+export const pickupDelivery = delivery_id => {
+  const token = localStorage.getItem("jwtToken");
+  const AuthStr = "Bearer ".concat(token);
+
+  return instance.put(`/api/deliveries/${delivery_id}/pickup`, {
     headers: { Authorization: AuthStr }
   });
 };

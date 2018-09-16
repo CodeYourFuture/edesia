@@ -1,4 +1,8 @@
 .custom-link {
   float: right;
+  margin: 5px 5px;
   font-size: 15px;
+}
+.custom-button {
+  color: blueviolet;
 }
