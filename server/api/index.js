@@ -117,7 +117,7 @@ router.put("/deliveries/:delivery_id", async (req, res) => {
   } catch (error) {
     res.status(502).json({ success: false });
   }
-}); 
+});
 
 router.delete("/deliveries/:delivery_id", async (req, res) => {
   const { body } = req;

@@ -77,14 +77,15 @@ const editDeliveryDetails = (delivery_id, data) => {
       address: data.address,
       store_name: data.store_name,
       deadline: data.deadline,
-      status: data.status,
+      status: data.status
     });
 };
 
 const deleteDelivery = async delivery_id => {
   return await knex
     .table("deliveries")
-    .where({ delivery_id }).del();
+    .where({ delivery_id })
+    .del();
 };
 
 module.exports = {
