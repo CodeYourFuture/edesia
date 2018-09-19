@@ -10,6 +10,11 @@ import Register from "../../components/Register/Register";
 import DeliveryDetails from "../DeliveryDetails/DeliveryDetails";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import DeliveriesAdmin from "../DeliveriesAdmin/DeliveriesAdmin";
+import HighlightedLink from "../../components/HighlightedLink/HighlightedLink";
+import Logo from "../../components/Logo";
+import UpdateDelivery from "../DeliveriesAdmin/UpdateDelivery";
+
+import DeleteDelivery from "../DeliveriesAdmin/DeleteDelivery";
 import AddDeliveries from "../DeliveriesAdmin/AddDeliveries";
 import Menu from "../Menu/Menu";
 
@@ -31,6 +36,16 @@ class App extends Component {
           <Route exact path="/admin/deliveries/add" component={AddDeliveries} />
           <Route exact path="/admin/deliveries" component={DeliveriesAdmin} />
           <Route path="/admin/drivers" component={UpdateProfile} />
+          <Route
+            exact
+            path="/admin/deliveries/:deliveryId(\d+)"
+            component={UpdateDelivery}
+          />
+          <Route
+            exact
+            path="/admin/deliveries/:deliveryId(\d+)"
+            component={DeleteDelivery}
+          />
 
           {token ? <Route path="/profile" component={Profile} /> : null}
           <Route path="/profile/updateProfile" component={UpdateProfile} />

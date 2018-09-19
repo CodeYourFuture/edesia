@@ -95,6 +95,12 @@ class DeliveriesAdmin extends Component {
                 <td>{delivery.deadline} </td>
                 <td>{delivery.status} </td>
                 <td>{delivery.driver_id} </td>
+                <td>
+                  <Link to={`/admin/deliveries/${delivery.delivery_id}`}>
+                    {" "}
+                    Edit{" "}
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>

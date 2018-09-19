@@ -109,4 +109,24 @@ router.put("/users/:user_id", async (req, res) => {
   }
 });
 
+router.put("/deliveries/:delivery_id", async (req, res) => {
+  const { body } = req;
+  try {
+    await db.editDeliveryDetails(req.params.delivery_id, body);
+    res.status(200).json({ success: true, data: {} });
+  } catch (error) {
+    res.status(502).json({ success: false });
+  }
+}); 
+
+router.delete("/deliveries/:delivery_id", async (req, res) => {
+  const { body } = req;
+  try {
+    await db.deleteDelivery(req.params.delivery_id, body);
+    res.status(200).json({ success: true, data: {} });
+  } catch (error) {
+    res.status(502).json({ success: false });
+  }
+});
+
 module.exports = router;

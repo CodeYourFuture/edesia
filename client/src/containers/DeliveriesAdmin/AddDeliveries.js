@@ -61,7 +61,6 @@ class AddDeliveries extends Component {
             <div className="form-group">
               <label for="deadline">Deadline</label>
               <input
-                className="form-control"
                 type="date"
                 placeholder="Deadline"
                 name="deadline"
@@ -70,15 +69,26 @@ class AddDeliveries extends Component {
               />
             </div>
             <div className="form-group">
-              <label for="status">Status</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Status"
-                name="status"
-                onChange={this.onchange}
-                required
-              />
+              <div>
+                <label>
+                  Status:
+                  <select
+                    name="status"
+                    type="dropdown"
+                    onChange={this.onchange}
+                    required
+                  >
+                    <option value="None">None</option>
+                    <option value="Available">Available</option>
+
+                    <option value="Pending">Pending</option>
+
+                    <option value="Delivered">Delivered</option>
+
+                    <option value="Cancelled">Cancelled</option>
+                  </select>
+                </label>
+              </div>
             </div>
             <div>
               <button
