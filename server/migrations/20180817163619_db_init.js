@@ -6,15 +6,15 @@ exports.up = async (knex, Promise) => {
     table.string("city").defaultTo("Glasgow");
     table.string("postcode").notNullable();
     table.string("password").notNullable();
+    table.string("role");
     table
       .foreign("role")
       .references("role_name")
-      .inTabletable("roles");
+      .inTable("roles");
   });
   await knex.schema.createTable("roles", table => {
-    table.string("role_name");
+    table.string("role_name").primary();
   });
-
   await knex.schema.createTable("stores", table => {
     table.increments("store_id");
     table.string("area");
