@@ -5,9 +5,9 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
-const saveUser = (name, email, city, password, postcode) => {
+const saveUser = (name, email, city, password, postcode, role) => {
   return knex("users")
-    .insert({ name, email, city, password, postcode })
+    .insert({ name, email, city, password, postcode, role })
     .returning("*");
 };
 const getSingleUser = (email, password) => {
@@ -20,6 +20,12 @@ const getUserProfile = userId => {
     .select("user_id", "email", "name", "postcode", "city")
     .where({ user_id: userId })
     .first();
+};
+
+const addDrivers = (name, email, city, postcode, role) => {
+  return knex("users")
+    .insert(name, email, city, postcode, role)
+    .returning("*");
 };
 const getDeliveries = () => {
   return knex.select().from("deliveries");
@@ -102,5 +108,6 @@ module.exports = {
   saveUser,
   filterDeliveryById,
   addDeliveries,
-  deleteDelivery
+  deleteDelivery,
+  addDrivers
 };

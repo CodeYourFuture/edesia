@@ -29,7 +29,8 @@ router.post("/users", (req, res) => {
     body.email,
     body.city,
     body.password,
-    body.postcode
+    body.postcode,
+    body.role
   ).then(() => {
     res.send();
   });
