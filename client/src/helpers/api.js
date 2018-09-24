@@ -20,6 +20,14 @@ export const updateDeliveryDetail = async (delivery_id, content) => {
     .put(`/api/deliveries/${delivery_id}`, content)
     .then(res => res.data);
 };
+export const updateDriverDetail = async (user_id, content) => {
+  return await instance
+    .put(`/api/drivers/${user_id}`, content)
+    .then(res => res.data);
+};
+export const getDriverById = user_id => {
+  return instance.get(`/api/drivers/${user_id}`);
+};
 
 export const deleteDelivery = async delivery_id => {
   return await instance.delete(`/api/deliveries/${delivery_id}`);
