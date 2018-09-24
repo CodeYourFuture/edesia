@@ -130,4 +130,10 @@ router.delete("/deliveries/:delivery_id", async (req, res) => {
   }
 });
 
+router.get("/admin/users", (req, res) => {
+  db.getUsers().then(data => {
+    res.send(data);
+  });
+});
+
 module.exports = router;

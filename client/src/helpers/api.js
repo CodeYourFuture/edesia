@@ -45,6 +45,11 @@ export const getDeliveries = async () => {
 export const getDeliveriesAdmin = () => {
   return instance.get("/api/admin/deliveries");
 };
+
+export const getUsersAdmin = () => {
+  return instance.get("/api/admin/users");
+};
+
 export const addDeliveries = (address, deadline, status, store_name) => {
   return instance.post("/api/admin/deliveries", {
     address,

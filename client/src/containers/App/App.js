@@ -13,11 +13,11 @@ import DeliveriesAdmin from "../DeliveriesAdmin/DeliveriesAdmin";
 import HighlightedLink from "../../components/HighlightedLink/HighlightedLink";
 import Logo from "../../components/Logo";
 import UpdateDelivery from "../DeliveriesAdmin/UpdateDelivery";
-
 import DeleteDelivery from "../DeliveriesAdmin/DeleteDelivery";
 import AddDeliveries from "../DeliveriesAdmin/AddDeliveries";
 import Menu from "../Menu/Menu";
-import AddDrivers from "../DriversAdmin/AddDrivers";
+import UsersDetail from "../UsersInfo/UsersDetail";
+import EditUser from "../../components/EditUser/EditUser";
 
 class App extends Component {
   render() {
@@ -30,6 +30,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/deliveries" component={Deliveries} />
           <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
+          <Route path="/admin/drivers" component={UsersDetail} />
+          <Route path="/admin/users/edit/:userId" component={EditUser} />
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
