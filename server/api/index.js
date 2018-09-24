@@ -142,7 +142,8 @@ router.post("/admin/users", (req, res) => {
     body.email,
     body.city,
     body.postcode,
-    body.role
+    body.role,
+    body.password
   ).then(() => {
     res.send();
   });

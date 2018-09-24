@@ -22,9 +22,10 @@ const getUserProfile = userId => {
     .first();
 };
 
-const addDrivers = (name, email, city, postcode, role) => {
+const addDrivers = (name, email, city, postcode, role, password) => {
+  console.log(name, email, city, postcode, role, password);
   return knex("users")
-    .insert(name, email, city, postcode, role)
+    .insert({ name, email, city, postcode, role, password })
     .returning("*");
 };
 const getDeliveries = () => {
