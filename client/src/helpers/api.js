@@ -8,15 +8,6 @@ const instance = axios.create({
 export const getUsers = () => {
   return instance.get("api/users").then(res => res.data);
 };
-export const saveUser = (name, email, city, postcode, role) => {
-  return instance.post("/api/users", {
-    name,
-    email,
-    city,
-    postcode,
-    role
-  });
-};
 
 export const updateUserProfile = async (user_id, content) => {
   return await instance
@@ -48,6 +39,15 @@ export const getDeliveriesAdmin = () => {
 
 export const getUsersAdmin = () => {
   return instance.get("/api/admin/users");
+};
+export const addDrivers = (name, email, city, postcode, role) => {
+  return instance.post("/api/admin/users", {
+    name,
+    email,
+    city,
+    postcode,
+    role
+  });
 };
 
 export const addDeliveries = (address, deadline, status, store_name) => {

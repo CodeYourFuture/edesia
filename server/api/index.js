@@ -135,5 +135,17 @@ router.get("/admin/users", (req, res) => {
     res.send(data);
   });
 });
+router.post("/admin/users", (req, res) => {
+  const body = req.body;
+  db.addDrivers(
+    body.name,
+    body.email,
+    body.city,
+    body.postcode,
+    body.role
+  ).then(() => {
+    res.send();
+  });
+});
 
 module.exports = router;
