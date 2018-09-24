@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { saveUser } from "../../helpers/api";
+import { addDrivers } from "../../helpers/api";
 
-class addDrivers extends Component {
+class addNewDrivers extends Component {
   constructor() {
     super();
     this.state = {
@@ -23,8 +23,8 @@ class addDrivers extends Component {
     input.preventDefault();
     const { name, email, city, postcode } = this.state;
 
-    saveUser(name, email, city, postcode).then(result => {
-      this.props.history.push("/admin/Deliveries");
+    addDrivers(name, email, city, postcode).then(result => {
+      this.props.history.push("/admin/drivers");
     });
   };
 
@@ -33,7 +33,7 @@ class addDrivers extends Component {
       <div className="container">
         <div className="content">
           <div>
-            <h3>Add/Edit drivers</h3>
+            <h3>Add Drivers</h3>
           </div>
 
           <form className="add-drivers-form col-sm-2">
@@ -113,4 +113,4 @@ class addDrivers extends Component {
   }
 }
 
-export default addDrivers;
+export default addNewDrivers;
