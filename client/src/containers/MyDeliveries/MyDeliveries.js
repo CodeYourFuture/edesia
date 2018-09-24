@@ -11,7 +11,6 @@ class MyDeliveries extends Component {
       try {
         const driver_id = JSON.parse(user).user_id;
         const { data } = await getMyDeliveries(driver_id);
-        console.log(data);
         this.setState({
           deliveries: data
         });
@@ -24,6 +23,7 @@ class MyDeliveries extends Component {
     }
   };
   render() {
+    const { deliveries } = this.state;
     return (
       <div className="app">
         <h2> My Deliveries</h2>
@@ -39,7 +39,7 @@ class MyDeliveries extends Component {
               </tr>
             </thead>
             <tbody className="table-hover">
-              {this.state.deliveries.map(delivery => (
+              {deliveries.map(delivery => (
                 <tr className="delivery-row">
                   <th scope="row">{delivery.delivery_id} </th>
                   <td>{delivery.address} </td>
