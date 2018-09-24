@@ -80,6 +80,18 @@ const editDeliveryDetails = (delivery_id, data) => {
       status: data.status
     });
 };
+const editDriversAdmin = (user_id, data) => {
+  return knex
+    .table("users")
+    .where("user_id", "=", user_id)
+    .update({
+      name: data.name,
+      email: data.email,
+      city: data.city,
+      postcode: data.postcode,
+      role: data.role
+    });
+};
 
 const deleteDelivery = async delivery_id => {
   return await knex
@@ -102,5 +114,6 @@ module.exports = {
   saveUser,
   filterDeliveryById,
   addDeliveries,
-  deleteDelivery
+  deleteDelivery,
+  editDriversAdmin
 };
