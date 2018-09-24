@@ -29,7 +29,7 @@ router.post("/users", (req, res) => {
     body.email,
     body.city,
     body.password,
-    body.postcode,
+    body.postcode
   ).then(() => {
     res.send();
   });
@@ -68,6 +68,26 @@ router.get("/deliveries/:deliveryId", async (req, res) => {
     res.send(data);
   } else {
     res.send(404);
+  }
+});
+
+router.get("/drivers/:userId", async (req, res) => {
+  const user_id = req.params.userId;
+  const data = await db.filterDriverById(user_id);
+  if (data) {
+    res.send(data);
+  } else {
+    res.send(404);
+  }
+});
+
+router.put("/drivers/:user_id", async (req, res) => {
+  const { body } = req;
+  try {
+    await db.editDriverAdmin(req.params.user_id, body);
+    res.status(200).json({ success: true, data: {} });
+  } catch (error) {
+    res.status(502).json({ success: false });
   }
 });
 
@@ -134,6 +154,5 @@ router.get("/admin/users", (req, res) => {
     res.send(data);
   });
 });
-
 
 module.exports = router;
