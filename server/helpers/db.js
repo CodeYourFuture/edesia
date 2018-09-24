@@ -5,9 +5,9 @@ const knex = require("knex")(config);
 const getUsers = () => {
   return knex.select().from("users");
 };
-const saveUser = (name, email, city, password, postcode, role) => {
+const saveUser = (name, email, password, city, postcode, role) => {
   return knex("users")
-    .insert({ name, email, city, password, postcode, role })
+    .insert({ name, email, password, city, postcode, role })
     .returning("*");
 };
 const getSingleUser = (email, password) => {
@@ -23,7 +23,8 @@ const getUserProfile = userId => {
 };
 
 const addDrivers = (name, email, city, postcode, role, password) => {
-  console.log(name, email, city, postcode, role, password);
+  var data = { name, email, city, postcode, role, password };
+  console.log(data);
   return knex("users")
     .insert({ name, email, city, postcode, role, password })
     .returning("*");

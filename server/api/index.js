@@ -140,10 +140,10 @@ router.post("/admin/users", (req, res) => {
   db.addDrivers(
     body.name,
     body.email,
+    body.password,
     body.city,
     body.postcode,
-    body.role,
-    body.password
+    body.role
   ).then(() => {
     res.send();
   });

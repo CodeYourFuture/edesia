@@ -5,7 +5,8 @@ exports.seed = async (knex, Promise) => {
       // Inserts seed entries
       return knex("roles").insert([
         { role_name: "user" },
-        { role_name: "admin" }
+        { role_name: "admin" },
+        { role_name: "driver" }
       ]);
     });
   await knex("users")

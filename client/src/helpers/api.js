@@ -40,14 +40,14 @@ export const getDeliveriesAdmin = () => {
 export const getUsersAdmin = () => {
   return instance.get("/api/admin/users");
 };
-export const addDrivers = (name, email, city, postcode, role, password) => {
+export const addDrivers = (name, email, password, city, postcode, role) => {
   return instance.post("/api/admin/users", {
     name,
     email,
+    password,
     city,
     postcode,
-    role,
-    password
+    role
   });
 };
 

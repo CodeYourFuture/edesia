@@ -7,6 +7,7 @@ class addNewDrivers extends Component {
     this.state = {
       name: "",
       email: "",
+      password: "",
       city: "",
       postcode: "",
       role: ""
@@ -14,6 +15,8 @@ class addNewDrivers extends Component {
   }
 
   onchange = input => {
+    console.log(input.target.name);
+    console.log(input.target.value);
     const state = this.state;
     state[input.target.name] = input.target.value;
     this.setState(state);
@@ -21,9 +24,9 @@ class addNewDrivers extends Component {
 
   onSubmit = input => {
     input.preventDefault();
-    const { name, email, city, postcode } = this.state;
+    const { name, email, password, city, postcode, role } = this.state;
 
-    addDrivers(name, email, city, postcode).then(result => {
+    addDrivers(name, email, password, city, postcode, role).then(result => {
       this.props.history.push("/admin/drivers");
     });
   };
@@ -60,6 +63,17 @@ class addNewDrivers extends Component {
               />
             </div>
             <div className="form-group">
+              <label for="email">Password</label>
+              <input
+                className="form-control"
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={this.onchange}
+                required
+              />
+            </div>
+            <div className="form-group">
               <label for="city">City</label>
               <input
                 type="text"
@@ -82,17 +96,17 @@ class addNewDrivers extends Component {
             <div className="form-group">
               <div>
                 <label>
-                  role:
+                  Role:
                   <select
                     name="role"
                     type="dropdown"
                     onChange={this.onchange}
                     required
                   >
-                    <option value="None">None</option>
-                    <option value="Available">Driver</option>
+                    <option value="none">None</option>
+                    <option value="driver">Driver</option>
 
-                    <option value="Pending">Admin</option>
+                    <option value="admin">Admin</option>
                   </select>
                 </label>
               </div>
