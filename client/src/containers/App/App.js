@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "../Home/Home";
 import Deliveries from "../Deliveries/Deliveries";
-import UpdateProfile from "../Profile/UpdateProfile";
+// import UpdateProfile from "../Profile/UpdateProfile";
 import Profile from "../Profile/Profile";
 import Login from "../../components/Login/Login";
 import Register from "../../components/Register/Register";
@@ -31,7 +31,12 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/deliveries" component={Deliveries} />
           <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
-          <Route path="/admin/drivers" component={UsersDetail} />
+          <Route
+            exact
+            path="/admin/drivers/edit/:userId(\d+)"
+            component={UpdateDriverDetails}
+          />
+          <Route exact path="/admin/drivers" component={UsersDetail} />
           <Route path="/admin/users/edit/:userId" component={EditUser} />
 
           <Route path="/login" component={Login} />
@@ -39,7 +44,7 @@ class App extends Component {
           <Route exact path="/admin" component={Dashboard} />
           <Route exact path="/admin/deliveries/add" component={AddDeliveries} />
           <Route exact path="/admin/deliveries" component={DeliveriesAdmin} />
-          <Route path="/admin/drivers" component={UpdateProfile} />
+          {/* <Route path="/admin/drivers" component={UpdateProfile} /> */}
           <Route
             exact
             path="/admin/deliveries/:deliveryId(\d+)"
@@ -52,12 +57,7 @@ class App extends Component {
           />
 
           {token ? <Route path="/profile" component={Profile} /> : null}
-          <Route path="/profile/updateProfile" component={UpdateProfile} />
-          <Route
-            exact
-            path="/admin/drivers/edit/:userId(\d+)"
-            component={UpdateDriverDetails}
-          />
+          {/* <Route path="/profile/updateProfile" component={UpdateProfile} /> */}
         </div>
       </Router>
     );

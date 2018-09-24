@@ -87,7 +87,8 @@ router.put("/drivers/:user_id", async (req, res) => {
     await db.editDriverAdmin(req.params.user_id, body);
     res.status(200).json({ success: true, data: {} });
   } catch (error) {
-    res.status(502).json({ success: false });
+    console.log(error);
+    res.status(500).json({ success: false, error: error });
   }
 });
 
