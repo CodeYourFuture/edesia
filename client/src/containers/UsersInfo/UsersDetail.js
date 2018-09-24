@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getUsersAdmin } from "../../helpers/api";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class UsersAdmin extends Component {
   constructor() {
@@ -28,6 +28,7 @@ class UsersAdmin extends Component {
     return (
       <div className="App">
         <h2> Users Info </h2>
+        <Link to="/admin/drivers/add"> Add Drivers </Link>
         <div className="user-info">
           <div className="table-responsive">
             <table className="table table-bordered ">

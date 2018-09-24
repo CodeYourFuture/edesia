@@ -38,7 +38,6 @@ class App extends Component {
           <Route exact path="/admin" component={Dashboard} />
           <Route exact path="/admin/deliveries/add" component={AddDeliveries} />
           <Route exact path="/admin/deliveries" component={DeliveriesAdmin} />
-          <Route path="/admin/drivers" component={AddDrivers} />
           <Route
             exact
             path="/admin/deliveries/:deliveryId(\d+)"
