@@ -16,7 +16,7 @@ class UsersAdmin extends Component {
   };
 
   onClick = user_id => {
-    this.props.history.push(`/admin/users/edit/${user_id}`);
+    this.props.history.push(`/admin/drivers/edit/${user_id}`);
     console.log(user_id);
   };
 

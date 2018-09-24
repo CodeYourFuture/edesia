@@ -18,6 +18,7 @@ import AddDeliveries from "../DeliveriesAdmin/AddDeliveries";
 import Menu from "../Menu/Menu";
 import UsersDetail from "../UsersInfo/UsersDetail";
 import EditUser from "../../components/EditUser/EditUser";
+import UpdateDriverDetails from "../UsersInfo/UpdateDriverDetails";
 
 class App extends Component {
   render() {
@@ -52,6 +53,11 @@ class App extends Component {
 
           {token ? <Route path="/profile" component={Profile} /> : null}
           <Route path="/profile/updateProfile" component={UpdateProfile} />
+          <Route
+            exact
+            path="/admin/drivers/edit/:userId(\d+)"
+            component={UpdateDriverDetails}
+          />
         </div>
       </Router>
     );
