@@ -17,6 +17,7 @@ import UpdateDelivery from "../DeliveriesAdmin/UpdateDelivery";
 import DeleteDelivery from "../DeliveriesAdmin/DeleteDelivery";
 import AddDeliveries from "../DeliveriesAdmin/AddDeliveries";
 import Menu from "../Menu/Menu";
+import AddDrivers from "../DriversAdmin/AddDrivers";
 
 class App extends Component {
   render() {
@@ -35,7 +36,7 @@ class App extends Component {
           <Route exact path="/admin" component={Dashboard} />
           <Route exact path="/admin/deliveries/add" component={AddDeliveries} />
           <Route exact path="/admin/deliveries" component={DeliveriesAdmin} />
-          <Route path="/admin/drivers" component={UpdateProfile} />
+          <Route path="/admin/drivers" component={AddDrivers} />
           <Route
             exact
             path="/admin/deliveries/:deliveryId(\d+)"

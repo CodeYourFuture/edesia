@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { saveUser } from "../../helpers/api";
 
-class saveUser extends Component {
+class addDrivers extends Component {
   constructor() {
     super();
     this.state = {
@@ -21,9 +21,9 @@ class saveUser extends Component {
 
   onSubmit = input => {
     input.preventDefault();
-    const { address, deadline, status, store_name } = this.state;
+    const { name, email, city, postcode } = this.state;
 
-    addDeliveries(address, deadline, status, store_name).then(result => {
+    saveUser(name, email, city, postcode).then(result => {
       this.props.history.push("/admin/Deliveries");
     });
   };
@@ -70,23 +70,29 @@ class saveUser extends Component {
               />
             </div>
             <div className="form-group">
+              <label for="postcode">Postcode</label>
+              <input
+                type="text"
+                placeholder="Postcode"
+                name="postcode"
+                onChange={this.onchange}
+                required
+              />
+            </div>
+            <div className="form-group">
               <div>
                 <label>
-                  Status:
+                  role:
                   <select
-                    name="status"
+                    name="role"
                     type="dropdown"
                     onChange={this.onchange}
                     required
                   >
                     <option value="None">None</option>
-                    <option value="Available">Available</option>
+                    <option value="Available">Driver</option>
 
-                    <option value="Pending">Pending</option>
-
-                    <option value="Delivered">Delivered</option>
-
-                    <option value="Cancelled">Cancelled</option>
+                    <option value="Pending">Admin</option>
                   </select>
                 </label>
               </div>
@@ -107,4 +113,4 @@ class saveUser extends Component {
   }
 }
 
-export default saveUser;
+export default addDrivers;
