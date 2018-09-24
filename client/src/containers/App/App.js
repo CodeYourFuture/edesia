@@ -18,6 +18,7 @@ import AddDeliveries from "../DeliveriesAdmin/AddDeliveries";
 import Menu from "../Menu/Menu";
 import UsersDetail from "../UsersInfo/UsersDetail";
 import EditUser from "../../components/EditUser/EditUser";
+import addDrivers from "../UsersInfo/AddDrivers";
 
 class App extends Component {
   render() {
@@ -30,7 +31,9 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/deliveries" component={Deliveries} />
           <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
+          <Route exact path="/admin/drivers/add" component={addDrivers} />
           <Route path="/admin/drivers" component={UsersDetail} />
+
           <Route path="/admin/users/edit/:userId" component={EditUser} />
 
           <Route path="/login" component={Login} />
