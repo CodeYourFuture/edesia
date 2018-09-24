@@ -37,6 +37,12 @@ const filterDeliveryById = deliveryId => {
     .first();
 };
 
+const filterDeliveriesByDriverId = driverId => {
+  return knex("deliveries")
+    .select()
+    .where({ driver_id: driverId });
+};
+
 const getStores = () => {
   return knex.select().from("stores");
 };
@@ -121,5 +127,6 @@ module.exports = {
   addDeliveries,
   deleteDelivery,
   editDriverAdmin,
-  filterDriverById
+  filterDriverById,
+  filterDeliveriesByDriverId
 };

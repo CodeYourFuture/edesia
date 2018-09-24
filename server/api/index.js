@@ -71,6 +71,7 @@ router.get("/deliveries/:deliveryId", async (req, res) => {
   }
 });
 
+
 router.get("/drivers/:userId", async (req, res) => {
   const user_id = req.params.userId;
   const data = await db.filterDriverById(user_id);
@@ -90,6 +91,13 @@ router.put("/drivers/:user_id", async (req, res) => {
     console.log(error);
     res.status(500).json({ success: false, error: error });
   }
+});
+
+=
+router.get("/deliveries/driver/:driverId", async (req, res) => {
+  const driver_id = req.params.driverId;
+  const data = await db.filterDeliveriesByDriverId(driver_id);
+  res.send(data);
 });
 
 router.put(

@@ -4,7 +4,7 @@ exports.seed = async (knex, Promise) => {
     .then(function() {
       // Inserts seed entries
       return knex("roles").insert([
-        { role_name: "user" },
+        { role_name: "driver" },
         { role_name: "admin" }
       ]);
     });
@@ -19,7 +19,7 @@ exports.seed = async (knex, Promise) => {
           password: "password1",
           city: "Glasgow",
           postcode: "G3 4EF",
-          role: "user"
+          role: "driver"
         },
         {
           name: "awet",
