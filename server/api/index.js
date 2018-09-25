@@ -29,8 +29,7 @@ router.post("/users", (req, res) => {
     body.email,
     body.city,
     body.password,
-    body.postcode,
-    body.role
+    body.postcode
   ).then(() => {
     res.send();
   });
@@ -72,6 +71,32 @@ router.get("/deliveries/:deliveryId", async (req, res) => {
   }
 });
 
+router.get("/drivers/:userId", async (req, res) => {
+  const user_id = req.params.userId;
+  const data = await db.filterDriverById(user_id);
+  if (data) {
+    res.send(data);
+  } else {
+    res.send(404);
+  }
+});
+
+router.put("/drivers/:user_id", async (req, res) => {
+  const { body } = req;
+  try {
+    await db.editDriverAdmin(req.params.user_id, body);
+    res.status(200).json({ success: true, data: {} });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, error: error });
+  }
+});
+
+router.get("/deliveries/driver/:driverId", async (req, res) => {
+  const driver_id = req.params.driverId;
+  const data = await db.filterDeliveriesByDriverId(driver_id);
+  res.send(data);
+});
 router.put(
   "/deliveries/:deliveryId/pickup",
   passport.authenticate("jwt", { session: false }),
@@ -133,19 +158,6 @@ router.delete("/deliveries/:delivery_id", async (req, res) => {
 router.get("/admin/users", (req, res) => {
   db.getUsers().then(data => {
     res.send(data);
-  });
-});
-router.post("/admin/users", (req, res) => {
-  const body = req.body;
-  db.addDrivers(
-    body.name,
-    body.email,
-    body.password,
-    body.city,
-    body.postcode,
-    body.role
-  ).then(() => {
-    res.send();
   });
 });
 
