@@ -20,7 +20,7 @@ exports.seed = async (knex, Promise) => {
           password: "password1",
           city: "Glasgow",
           postcode: "G3 4EF",
-          role: "user"
+          role: "driver"
         },
         {
           name: "awet",

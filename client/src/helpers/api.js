@@ -62,6 +62,10 @@ export const getDeliveryById = delivery_id => {
   return instance.get(`/api/deliveries/${delivery_id}`);
 };
 
+export const getMyDeliveries = driver_id => {
+  return instance.get(`/api/deliveries/driver/${driver_id}`);
+};
+
 export const getUserProfile = () => {
   const token = localStorage.getItem("jwtToken");
   const AuthStr = "Bearer ".concat(token);

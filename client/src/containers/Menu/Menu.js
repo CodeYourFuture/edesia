@@ -47,9 +47,9 @@ class Menu extends Component {
           />
         ) : null}
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -57,46 +57,53 @@ class Menu extends Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon" />
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
               <li className="navbar-brand active">
-                <Link to="/" class="nav-link">
+                <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>
               {token && userRole === "admin" ? (
                 <li className="navbar-brand">
-                  <Link to="/admin" class="nav-link ">
+                  <Link to="/admin" className="nav-link ">
                     Edesia admin
                   </Link>
                 </li>
               ) : null}
 
               <li className="navbar-brand">
-                <Link to="/deliveries" class="nav-link">
+                <Link to="/deliveries" className="nav-link">
                   Deliveries
                 </Link>
               </li>
+              {token && userRole === "driver" ? (
+                <li className="navbar-brand">
+                  <Link to="/mydeliveries" className="nav-link">
+                    My Deliveries
+                  </Link>
+                </li>
+              ) : null}
               {!token ? (
                 <li className="navbar-brand">
-                  <Link to="/login" class="nav-link">
+                  <Link to="/login" className="nav-link">
                     Login
                   </Link>
                 </li>
               ) : null}
               {!token ? (
                 <li className="navbar-brand">
-                  <Link to="/register" class="nav-link">
+                  <Link to="/register" className="nav-link">
                     Register
                   </Link>
                 </li>
               ) : null}
-              {token && userRole === "user" ? (
+              {token && userRole === "driver" ? (
                 <li className="navbar-brand">
-                  <Link to="/profile" class="nav-link">
+                  <Link to="/profile" className="nav-link">
                     Profile
                   </Link>
                 </li>
@@ -112,7 +119,7 @@ class Menu extends Component {
                 </li>
               ) : null}
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form className="form-inline my-2 my-lg-0">
               <input
                 className="form-control mr-sm-2"
                 type="search"
