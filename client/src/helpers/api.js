@@ -1,6 +1,5 @@
 const axios = require("axios");
 const API_URL = process.env.REACT_APP_API_URI || "/";
-
 const instance = axios.create({
   baseURL: API_URL
 });
@@ -44,10 +43,10 @@ export const addDrivers = (name, email, password, city, postcode, role) => {
   return instance.post("/api/admin/users", {
     name,
     email,
-    password,
     city,
     postcode,
-    role
+    role,
+    password
   });
 };
 
