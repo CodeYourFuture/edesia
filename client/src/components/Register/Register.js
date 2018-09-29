@@ -33,67 +33,57 @@ class Register extends Component {
       <div class="container">
         <form class="form-signin">
           <h2 class="form-signin-heading">Register</h2>
-          <label for="inputEmail" class="sr-only">
-            Name
-          </label>
+          <label for="inputEmail">Name</label>
           <input
             type="name"
             class="form-control"
-            placeholder="name"
+            placeholder="John"
             name="name"
             onChange={this.onChange}
             required
           />
-          <label for="inputCity" class="sr-only">
-            City
-          </label>
+          <label for="inputCity">City</label>
           <input
             type="city"
             class="form-control"
-            placeholder="city"
+            placeholder="Glasgow"
             name="city"
             onChange={this.onChange}
             required
           />
-          <label for="inputPostcode" class="sr-only">
-            Postcode
-          </label>
+          <label for="inputPostcode">Postcode</label>
           <input
             type="postcode"
             class="form-control"
-            placeholder="postcode"
+            placeholder="G20 4EF"
             name="postcode"
             onChange={this.onChange}
             required
           />
-          <label for="inputEmail" class="sr-only">
-            Email address
-          </label>
+          <label for="inputEmail"> Email </label>
           <input
             type="email"
             class="form-control"
-            placeholder="Email address"
+            placeholder="John@email.com"
             name="email"
             onChange={this.onChange}
             required
           />
-          <label for="inputPassword" class="sr-only">
-            Password
-          </label>
+          <label for="inputPassword">Password</label>
           <input
             type="password"
             class="form-control"
-            placeholder="Password"
+            placeholder="***********"
             name="password"
             onChange={this.onChange}
             required
           />
           <button
-            class="btn btn-lg btn-primary btn-block"
+            class="btn btn-lg btn-success btn-block"
             type="submit"
             onClick={this.onSubmit}
           >
-            Register
+            Continue
           </button>
         </form>
       </div>

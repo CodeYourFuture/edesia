@@ -10,15 +10,16 @@ import Register from "../../components/Register/Register";
 import DeliveryDetails from "../DeliveryDetails/DeliveryDetails";
 import Dashboard from "../../components/Dashboard/Dashboard";
 import DeliveriesAdmin from "../DeliveriesAdmin/DeliveriesAdmin";
-import HighlightedLink from "../../components/HighlightedLink/HighlightedLink";
 import Logo from "../../components/Logo";
-import UpdateDelivery from "../DeliveriesAdmin/UpdateDelivery";
+// import UpdateDelivery from "../DeliveriesAdmin/UpdateDelivery";
 import DeleteDelivery from "../DeliveriesAdmin/DeleteDelivery";
 import AddDeliveries from "../DeliveriesAdmin/AddDeliveries";
 import Menu from "../Menu/Menu";
+import MyDeliveries from "../MyDeliveries/MyDeliveries";
 import UsersDetail from "../UsersInfo/UsersDetail";
 import EditUser from "../../components/EditUser/EditUser";
 import UpdateDriverDetails from "../UsersInfo/UpdateDriverDetails";
+import addDrivers from "../UsersInfo/AddDrivers";
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
           <hr />
           <Route exact path="/" component={Home} />
           <Route exact path="/deliveries" component={Deliveries} />
+          <Route exact path="/mydeliveries" component={MyDeliveries} />
           <Route path="/deliveries/:deliveryId" component={DeliveryDetails} />
           <Route
             exact
@@ -37,19 +39,18 @@ class App extends Component {
             component={UpdateDriverDetails}
           />
           <Route exact path="/admin/drivers" component={UsersDetail} />
+          <Route exact path="/admin/drivers/add" component={addDrivers} />
           <Route path="/admin/users/edit/:userId" component={EditUser} />
-
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route exact path="/admin" component={Dashboard} />
           <Route exact path="/admin/deliveries/add" component={AddDeliveries} />
           <Route exact path="/admin/deliveries" component={DeliveriesAdmin} />
-          {/* <Route path="/admin/drivers" component={UpdateProfile} /> */}
-          <Route
+          {/* <Route
             exact
             path="/admin/deliveries/:deliveryId(\d+)"
             component={UpdateDelivery}
-          />
+          /> */}
           <Route
             exact
             path="/admin/deliveries/:deliveryId(\d+)"

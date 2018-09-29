@@ -61,6 +61,19 @@ router.post("/admin/deliveries", (req, res) => {
     res.send();
   });
 });
+router.post("/admin/users", (req, res) => {
+  const body = req.body;
+  db.addDrivers(
+    body.name,
+    body.email,
+    body.city,
+    body.postcode,
+    body.role,
+    body.password
+  ).then(() => {
+    res.send();
+  });
+});
 router.get("/deliveries/:deliveryId", async (req, res) => {
   const delivery_id = req.params.deliveryId;
   const data = await db.filterDeliveryById(delivery_id);
@@ -92,6 +105,11 @@ router.put("/drivers/:user_id", async (req, res) => {
   }
 });
 
+router.get("/deliveries/driver/:driverId", async (req, res) => {
+  const driver_id = req.params.driverId;
+  const data = await db.filterDeliveriesByDriverId(driver_id);
+  res.send(data);
+});
 router.put(
   "/deliveries/:deliveryId/pickup",
   passport.authenticate("jwt", { session: false }),

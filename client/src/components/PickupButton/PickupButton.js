@@ -31,7 +31,7 @@ class PickupButton extends Component {
   render() {
     return (
       <div>
-        <HighlightedLink text="I can Pickup" onClick={this.onClick} />
+        <HighlightedLink text="I can Pickup 👍🏾" onClick={this.onClick} />
         <br />
         <br />
         {this.state.message !== "" && (
