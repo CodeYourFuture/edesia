@@ -3,6 +3,26 @@
   flex-direction: row;
   max-width: 400px;
   justify-content: space-around;
+  align-items: center;
+  align-self: center;
+}
+
+.dashboard-title {
+  text-align: center;
+}
+.button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .dashboard-link button {
