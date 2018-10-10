@@ -66,48 +66,48 @@ class Menu extends Component {
             <ul className="navbar-nav mr-auto">
               <li className="navbar-brand active">
                 <Link to="/" className="nav-link">
-                  HOME
+                  home
                 </Link>
               </li>
 
               {token && userRole === "admin" ? (
                 <li className="navbar-brand">
                   <Link to="/admin" className="nav-link ">
-                    EDESIA ADMIN
+                    edesia admin
                   </Link>
                 </li>
               ) : null}
 
               <li className="navbar-brand">
                 <Link to="/deliveries" className="nav-link">
-                  DELIVERIES
+                  deliveries
                 </Link>
               </li>
               {token && userRole === "driver" ? (
                 <li className="navbar-brand">
                   <Link to="/mydeliveries" className="nav-link">
-                    MY DELIVERIES
+                    my deliveries
                   </Link>
                 </li>
               ) : null}
               {!token ? (
                 <li className="navbar-brand">
                   <Link to="/login" className="nav-link">
-                    LOGIN
+                    login
                   </Link>
                 </li>
               ) : null}
               {!token ? (
                 <li className="navbar-brand">
                   <Link to="/register" className="nav-link">
-                    REGISTER
+                    register
                   </Link>
                 </li>
               ) : null}
               {token && userRole === "driver" ? (
                 <li className="navbar-brand">
                   <Link to="/profile" className="nav-link">
-                    PROFILE
+                    profile
                   </Link>
                 </li>
               ) : null}
@@ -117,25 +117,11 @@ class Menu extends Component {
                     className=" nav-link btn btn-outline-primary"
                     onClick={this.logout}
                   >
-                    LOGOUT
+                    logout
                   </button>
                 </li>
               ) : null}
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input
-                className="form-control mr-sm-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
           </div>
         </nav>
       </div>

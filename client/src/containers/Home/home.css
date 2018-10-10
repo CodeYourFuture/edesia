@@ -1,4 +1,16 @@
 .delivery-row {
-    width: 100%;
-    justify-content: space-between;
+  width: 100%;
+  justify-content: space-between;
+}
+.deliveries li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.deliveries li:not(:last-child) {
+  border-right: solid 1.5px;
+  margin: 3px;
+  padding: 10px;
+}
+h3 {
+  text-transform: uppercase;
 }

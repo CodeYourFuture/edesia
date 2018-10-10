@@ -2,8 +2,7 @@ import React, { Component, Fragment } from "react";
 import { getDeliveries } from "../../helpers/api";
 import DeliveryCard from "../../components/DeliveryCard/deliveryCard";
 import "./home.css";
-import Track from "../../components/Track";
-
+import Truck from "../../components/Truck/Truck";
 class Home extends Component {
   constructor() {
     super();
@@ -21,13 +20,11 @@ class Home extends Component {
     const { deliveriesList } = this.state;
     return (
       <div className="App">
-        <h1 className="App-title">WELLCOME TO EDESIA</h1>
         <p className="App-intro" />
-        <h2>FOOD PICKUP REPORT </h2>
-        <Track info-number="number" />
+        <Truck info-number="number" />
         <br />
         <div className="App">
-          <h2> CURRENT AVAILABLE DELIVERIES</h2>
+          <h3> Current available deliveries</h3>
           <div className="container">
             <div className="row delivery-row">
               {deliveriesList &&

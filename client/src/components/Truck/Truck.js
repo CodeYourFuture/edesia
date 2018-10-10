@@ -1,10 +1,10 @@
 import React from "react";
-import "./style.css";
+import "./Truck.css";
 import PropTypes from "prop-types";
 
-const Track = ({ number }) => (
-  <div class="track-container">
-    <div class="track-content">
+const Truck = ({ number }) => (
+  <div class="truck-container">
+    <div class="truck-content">
       <div class="front">
         <div class="light" />
         <div class="first-front-wheel">
@@ -54,7 +54,7 @@ const Track = ({ number }) => (
   </div>
 );
 
-export default Track;
-Track.PropTypes = {
+export default Truck;
+Truck.PropTypes = {
   number: PropTypes.number
 };
