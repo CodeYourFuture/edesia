@@ -6,7 +6,9 @@ const DashboardLink = props => {
   return (
     <div className="dashboard-link">
       <Link to={props.link}>
-        <button className="button ">{props.text}</button>
+        <button className="button ">
+          <em>{props.text}</em>
+        </button>
       </Link>
     </div>
   );
