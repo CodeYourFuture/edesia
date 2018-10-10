@@ -14,9 +14,11 @@
   background-color: #4caf50;
   color: white;
   cursor: pointer;
+  border: solid 2px;
+  border-radius: 10px;
 }
 .button:hover {
-  background-color: #3e8e41;
+  background-color: #065f09;
 }
 
 .button:active {
