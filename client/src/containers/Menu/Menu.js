@@ -49,7 +49,7 @@ class Menu extends Component {
           />
         ) : null}
         <Logo />
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <button
             className="navbar-toggler"
             type="button"

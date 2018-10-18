@@ -1,53 +1,53 @@
 import React from "react";
 import "./Truck.css";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 const Truck = ({ number }) => (
-  <div class="truck-container">
-    <div class="truck-content">
-      <div class="front">
-        <div class="light" />
-        <div class="first-front-wheel">
-          <div class="center-of-wheel" />
-          <div class="tooth" />
-          <div class="tooth" />
-          <div class="tooth" />
-          <div class="tooth" />
+  <div className="truck-container">
+    <div className="truck-content">
+      <div className="front">
+        <div className="light" />
+        <div className="first-front-wheel">
+          <div className="center-of-wheel" />
+          <div className="tooth" />
+          <div className="tooth" />
+          <div className="tooth" />
+          <div className="tooth" />
         </div>
       </div>
-      <div class="back">
-        <div class="content">
-          <div class="item-one">
-            <strong class="number">{10}</strong>
-            <div class="text">
+      <div className="back">
+        <div className="content">
+          <div className="item-one">
+            <strong className="number">{10}</strong>
+            <div className="text">
               <p>Deliveries</p>
-              <p class="missed">missed</p>
+              <p className="missed">missed</p>
               <p>this week</p>
             </div>
           </div>
-          <div class="item-two">
-            <strong class="number">{30}</strong>
-            <div class="text">
+          <div className="item-two">
+            <strong className="number">{30}</strong>
+            <div className="text">
               <p>Deliveries</p>
-              <p class="available">available</p>
+              <p className="available">available</p>
               <p>this week</p>
             </div>
           </div>
         </div>
-        <div class="first-back-wheel">
+        <div className="first-back-wheel">
           {" "}
-          <div class="center-of-wheel" />
-          <div class="tooth" />
-          <div class="tooth" />
-          <div class="tooth" />
-          <div class="tooth" />
+          <div className="center-of-wheel" />
+          <div className="tooth" />
+          <div className="tooth" />
+          <div className="tooth" />
+          <div className="tooth" />
         </div>
-        <div class="second-back-wheel">
-          <div class="center-of-wheel" />
-          <div class="tooth" />
-          <div class="tooth" />
-          <div class="tooth" />
-          <div class="tooth" />
+        <div className="second-back-wheel">
+          <div className="center-of-wheel" />
+          <div className="tooth" />
+          <div className="tooth" />
+          <div className="tooth" />
+          <div className="tooth" />
         </div>
       </div>
     </div>
@@ -55,6 +55,6 @@ const Truck = ({ number }) => (
 );
 
 export default Truck;
-Truck.PropTypes = {
-  number: PropTypes.number
+Truck.propTypes = {
+  number: propTypes.number
 };

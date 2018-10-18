@@ -17,7 +17,7 @@ class DeliveryMap extends Component {
       lat: 55.8505,
       lng: -4.28775
     },
-    zoom: 11
+    zoom: 12
   };
   componentDidMount() {
     getDeliveries().then(data =>
@@ -28,18 +28,19 @@ class DeliveryMap extends Component {
   }
 
   render() {
-    console.log(this.state.deliveriesList);
+    const { deliveriesList } = this.state;
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: "100vh", width: "100%" }}>
+      <div className="map-container" style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
           defaultCenter={
-            this.props.center // bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
+            this.props.center
+            // bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
           }
           defaultZoom={this.props.zoom}
         >
-          {this.state.deliveriesList &&
-            this.state.deliveriesList.map(delivery => {
+          {deliveriesList &&
+            deliveriesList.map(delivery => {
               return (
                 <DeliveryLocation
                   lat={Number(delivery.latitude)}
