@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/CodeYourFuture/edesia/issues"
   },
-  "homepage": "https://github.com/CodeYourFuture/edesia#readme"
+  "homepage": "https://github.com/CodeYourFuture/edesia#readme",
+  "dependencies": {
+    "google-map-react": "^1.0.9"
+  }
 }
