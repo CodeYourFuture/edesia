@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
+import { getDeliveriesAdmin } from "../../helpers/api";
 import "./DeliveryMap.css";
 
 const DeliveryLocation = ({ text }) => (
@@ -7,6 +8,10 @@ const DeliveryLocation = ({ text }) => (
 );
 
 class DeliveryMap extends Component {
+  constructor() {
+    super();
+    this.state = { deliveriesList: [] };
+  }
   static defaultProps = {
     center: {
       lat: 55.8505,
@@ -14,6 +19,14 @@ class DeliveryMap extends Component {
     },
     zoom: 8
   };
+  componentDidMount() {
+    getDeliveriesAdmin().then(data =>
+      this.setState({
+        deliveriesList: data.data
+      })
+    );
+    console.log(this.state.deliveriesList);
+  }
 
   render() {
     return (
@@ -25,7 +38,13 @@ class DeliveryMap extends Component {
           }
           defaultZoom={this.props.zoom}
         >
-          <DeliveryLocation lat={55.8505} lng={-4.28775} text={"Tesco"} />
+          {this.state.deliveriesList.map(delivery => {
+            <DeliveryLocation
+              lat={55.8505}
+              lng={-4.28775}
+              text={delivery.store_name}
+            />;
+          })}
         </GoogleMapReact>
       </div>
     );
