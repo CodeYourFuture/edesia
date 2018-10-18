@@ -5,6 +5,7 @@ import "./home.css";
 import Track from "../../components/Track";
 import DeliveryMap from "../DeliveryMap/DeliveryMap";
 
+import Truck from "../../components/Truck/Truck";
 class Home extends Component {
   constructor() {
     super();
@@ -23,7 +24,7 @@ class Home extends Component {
     return (
       <div className="App">
         <p className="App-intro" />
-        <Track info-number="number" />
+        <Truck info-number="number" />
         <br />
         <div className="App">
           <h3> Current available deliveries</h3>

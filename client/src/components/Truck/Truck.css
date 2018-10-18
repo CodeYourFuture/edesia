@@ -1,4 +1,4 @@
-.track-container {
+.truck-container {
   width: 100%;
   margin: auto;
   margin-top: 3em;
@@ -6,38 +6,30 @@
   height: 22em;
 }
 
-.track-container .track-content {
+.truck-container .truck-content {
   width: 760px;
   height: 18em;
+  right: 100%;
   display: grid;
   grid-template-columns: 4fr 8fr;
   position: absolute;
-  animation: car 5s linear infinite;
+  animation: car 5s linear;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes car {
   0% {
-    right: 0;
-  }
-
-  25% {
-    right: 25%;
-  }
-
-  50% {
-    right: 50%;
-  }
-
-  75% {
-    right: 75%;
+    right: -750px;
   }
 
   100% {
-    right: 100%;
+    right: 15%;
   }
 }
 
-.track-container .track-content .front {
+.truck-container .truck-content .front {
   background: purple;
   border-top-left-radius: 78%;
   position: relative;
@@ -46,7 +38,7 @@
   border-bottom-left-radius: 7%;
 }
 
-.track-container .track-content .front .light {
+.truck-container .truck-content .front .light {
   background: #fff;
   width: 1.6em;
   height: 1.2em;
@@ -57,7 +49,7 @@
   border-bottom-right-radius: 10%;
 }
 
-.track-container .track-content .front .first-front-wheel .center {
+.truck-container .truck-content .front .first-front-wheel .center {
   position: absolute;
   width: 0.5em;
   height: 0.5em;
@@ -66,7 +58,7 @@
   z-index: 10;
 }
 
-.track-container .track-content .front .first-front-wheel .tooth {
+.truck-container .truck-content .front .first-front-wheel .tooth {
   position: absolute;
   z-index: 1;
   width: 0.8em;
@@ -74,19 +66,19 @@
   background: #fff;
 }
 
-.track-container .track-content .front .first-front-wheel .tooth:nth-child(2) {
+.truck-container .truck-content .front .first-front-wheel .tooth:nth-child(2) {
   transform: rotate(45deg);
 }
 
-.track-container .track-content .front .first-front-wheel .tooth:nth-child(3) {
+.truck-container .truck-content .front .first-front-wheel .tooth:nth-child(3) {
   transform: rotate(90deg);
 }
 
-.track-container .track-content .front .first-front-wheel .tooth:nth-child(4) {
+.truck-container .truck-content .front .first-front-wheel .tooth:nth-child(4) {
   transform: rotate(135deg);
 }
 
-.track-container .track-content .front .light::before {
+.truck-container .truck-content .front .light::before {
   content: "";
   background: #fff;
   width: 0.5em;
@@ -96,7 +88,7 @@
   left: 210px;
 }
 
-.track-container .track-content .front .light::after {
+.truck-container .truck-content .front .light::after {
   content: "";
   background: #fff;
   width: 0.6em;
@@ -108,7 +100,7 @@
   border-bottom-right-radius: 10%;
 }
 
-.track-container .track-content .front .first-front-wheel {
+.truck-container .truck-content .front .first-front-wheel {
   background: black;
   position: absolute;
   width: 6em;
@@ -119,7 +111,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: spin 1s infinite linear;
+  animation: spin 1s linear;
+  animation-iteration-count: 5.5;
+  animation-duration: 1s;
 }
 
 @keyframes spin {
@@ -131,7 +125,7 @@
   }
 }
 
-.track-container .track-content .front .first-front-wheel::after {
+.truck-container .truck-content .front .first-front-wheel::after {
   content: "";
   background: #fff;
   position: relative;
@@ -141,7 +135,7 @@
   border-radius: 50%;
 }
 
-.track-container .track-content .front::after {
+.truck-container .truck-content .front::after {
   content: "";
   width: 74%;
   height: 8em;
@@ -152,13 +146,13 @@
   border-radius: 80% 0 0 0;
 }
 
-.track-container .track-content .back {
+.truck-container .truck-content .back {
   background: #bbb;
   position: relative;
   border-radius: 0 5% 4% 0;
 }
 
-.track-container .track-content .back .first-back-wheel {
+.truck-container .truck-content .back .first-back-wheel {
   background: black;
   position: absolute;
   width: 6em;
@@ -169,11 +163,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: spin 1s infinite linear;
+  animation: spin 1s linear;
+  animation-iteration-count: 5.5;
+  animation-duration: 1s;
   right: 45px;
 }
 
-.track-container .track-content .back .first-back-wheel .center {
+.truck-container .truck-content .back .first-back-wheel .center {
   position: absolute;
   width: 0.5em;
   height: 0.5em;
@@ -182,7 +178,7 @@
   z-index: 10;
 }
 
-.track-container .track-content .back .first-back-wheel .tooth {
+.truck-container .truck-content .back .first-back-wheel .tooth {
   position: absolute;
   z-index: 1;
   width: 0.8em;
@@ -190,19 +186,19 @@
   background: #fff;
 }
 
-.track-container .track-content .back .first-back-wheel .tooth:nth-child(2) {
+.truck-container .truck-content .back .first-back-wheel .tooth:nth-child(2) {
   transform: rotate(45deg);
 }
 
-.track-container .track-content .back .first-back-wheel .tooth:nth-child(3) {
+.truck-container .truck-content .back .first-back-wheel .tooth:nth-child(3) {
   transform: rotate(90deg);
 }
 
-.track-container .track-content .back .first-back-wheel .tooth:nth-child(4) {
+.truck-container .truck-content .back .first-back-wheel .tooth:nth-child(4) {
   transform: rotate(135deg);
 }
 
-.track-container .track-content .back .first-back-wheel::after {
+.truck-container .truck-content .back .first-back-wheel::after {
   content: "";
   background: #fff;
   position: relative;
@@ -211,7 +207,7 @@
   border-radius: 50%;
 }
 
-.track-container .track-content .back .second-back-wheel {
+.truck-container .truck-content .back .second-back-wheel {
   background: black;
   position: absolute;
   width: 6em;
@@ -222,11 +218,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: spin 1s infinite linear;
+  animation: spin 1s linear;
+  animation-iteration-count: 5.5;
+  animation-duration: 1s;
   right: 148px;
 }
 
-.track-container .track-content .back .second-back-wheel .center {
+.truck-container .truck-content .back .second-back-wheel .center {
   position: absolute;
   width: 0.5em;
   height: 0.5em;
@@ -235,7 +233,7 @@
   z-index: 10;
 }
 
-.track-container .track-content .back .second-back-wheel .tooth {
+.truck-container .truck-content .back .second-back-wheel .tooth {
   position: absolute;
   z-index: 1;
   width: 0.8em;
@@ -243,19 +241,19 @@
   background: #fff;
 }
 
-.track-container .track-content .back .second-back-wheel .tooth:nth-child(2) {
+.truck-container .truck-content .back .second-back-wheel .tooth:nth-child(2) {
   transform: rotate(45deg);
 }
 
-.track-container .track-content .back .second-back-wheel .tooth:nth-child(3) {
+.truck-container .truck-content .back .second-back-wheel .tooth:nth-child(3) {
   transform: rotate(90deg);
 }
 
-.track-container .track-content .back .second-back-wheel .tooth:nth-child(4) {
+.truck-container .truck-content .back .second-back-wheel .tooth:nth-child(4) {
   transform: rotate(135deg);
 }
 
-.track-container .track-content .back .second-back-wheel::after {
+.truck-container .truck-content .back .second-back-wheel::after {
   content: "";
   background: #fff;
   position: relative;
@@ -264,7 +262,7 @@
   border-radius: 50%;
 }
 
-.track-container .track-content .back .content {
+.truck-container .truck-content .back .content {
   width: 90%;
   background: white;
   margin: auto;
@@ -276,7 +274,7 @@
   grid-gap: 1em;
 }
 
-.track-container .track-content .back .item-one {
+.truck-container .truck-content .back .item-one {
   color: #ee8957;
   display: grid;
   grid-template-columns: 3fr 9fr;
@@ -284,24 +282,24 @@
   margin-top: 1em;
 }
 
-.track-container .track-content .back .item-one .number {
+.truck-container .truck-content .back .item-one .number {
   text-align: center;
   font-size: 5em;
 }
 
-.track-container .track-content .back .item-one .text {
+.truck-container .truck-content .back .item-one .text {
   font-weight: 550;
 }
 
-.track-container .track-content .back .item-one .text .missed {
+.truck-container .truck-content .back .item-one .text .missed {
   letter-spacing: 0.2em;
 }
-.track-container .track-content .back .item-one .text p {
+.truck-container .truck-content .back .item-one .text p {
   margin: 0.4em;
   font-size: 1.3em;
 }
 
-.track-container .track-content .back .item-two {
+.truck-container .truck-content .back .item-two {
   color: #77c094;
   display: grid;
   grid-template-columns: 3fr 9fr;
@@ -309,20 +307,20 @@
   margin-top: 1em;
 }
 
-.track-container .track-content .back .item-two .number {
+.truck-container .truck-content .back .item-two .number {
   text-align: center;
   font-size: 5em;
 }
 
-.track-container .track-content .back .item-two .text {
+.truck-container .truck-content .back .item-two .text {
   font-weight: 550;
 }
 
-.track-container .track-content .back .item-two .text .available {
+.truck-container .truck-content .back .item-two .text .available {
   letter-spacing: 1px;
 }
 
-.track-container .track-content .back .item-two .text p {
+.truck-container .truck-content .back .item-two .text p {
   margin: 0.4em;
   font-size: 1.3em;
 }
