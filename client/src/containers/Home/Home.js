@@ -3,6 +3,7 @@ import { getDeliveries } from "../../helpers/api";
 import DeliveryCard from "../../components/DeliveryCard/deliveryCard";
 import "./home.css";
 import Track from "../../components/Track";
+import DeliveryMap from "../DeliveryMap/DeliveryMap";
 
 class Home extends Component {
   constructor() {
@@ -41,6 +42,9 @@ class Home extends Component {
                   );
                 })}
             </div>
+          </div>
+          <div>
+            <DeliveryMap />
           </div>
         </div>
       </div>
