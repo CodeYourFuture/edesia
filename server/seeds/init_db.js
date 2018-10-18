@@ -53,21 +53,27 @@ exports.seed = async (knex, Promise) => {
           store_name: "Tesco",
           deadline: new Date("2018-09-01T03:30:00"),
           status: "Available",
-          driver_id: 1
+          driver_id: 1,
+          latitude: "55.85938",
+          longitude: "-4.32332"
         },
         {
           address: "Parkhead",
           store_name: "Aldi",
           deadline: new Date("2018-08-30T03:30:00"),
           status: "Delivered",
-          driver_id: 2
+          driver_id: 2,
+          latitude: "55.85157",
+          longitude: "-4.19406"
         },
         {
-          address: "Parkhead",
+          address: "Springburn",
           store_name: "Lidl",
           deadline: new Date("2018-08-30T03:30:00"),
           status: "Pending",
-          driver_id: 2
+          driver_id: 2,
+          latitude: "55.88720",
+          longitude: "-4.23080"
         }
       ]);
     });

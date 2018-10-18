@@ -33,6 +33,8 @@ exports.up = async (knex, Promise) => {
       .foreign("driver_id")
       .references("user_id")
       .inTable("users");
+    table.string("latitude");
+    table.string("longitude");
   });
 
   await knex.schema.createTable("items", table => {
