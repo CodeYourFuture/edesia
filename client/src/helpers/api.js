@@ -58,12 +58,21 @@ export const addDrivers = (name, email, password, city, postcode, role) => {
   });
 };
 
-export const addDeliveries = (address, deadline, status, store_name) => {
+export const addDeliveries = (
+  address,
+  deadline,
+  status,
+  store_name,
+  latitude,
+  longitude
+) => {
   return instance.post("/api/admin/deliveries", {
     address,
     deadline,
     status,
-    store_name
+    store_name,
+    latitude,
+    longitude
   });
 };
 export const getDeliveryById = delivery_id => {

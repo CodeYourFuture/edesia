@@ -32,9 +32,16 @@ const addDrivers = (name, email, city, postcode, role, password) => {
 const getDeliveries = () => {
   return knex.select().from("deliveries");
 };
-const addDeliveries = (address, deadline, status, store_name) => {
+const addDeliveries = (
+  address,
+  deadline,
+  status,
+  store_name,
+  latitude,
+  longitude
+) => {
   return knex("deliveries")
-    .insert({ address, deadline, status, store_name })
+    .insert({ address, deadline, status, store_name, latitude, longitude })
     .returning("*");
 };
 

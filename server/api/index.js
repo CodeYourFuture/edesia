@@ -56,7 +56,9 @@ router.post("/admin/deliveries", (req, res) => {
     body.address,
     body.deadline,
     body.status,
-    body.store_name
+    body.store_name,
+    body.latitude,
+    body.longitude
   ).then(() => {
     res.send();
   });
