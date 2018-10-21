@@ -31,25 +31,31 @@ class DeliveryMap extends Component {
     const { deliveriesList } = this.state;
     return (
       // Important! Always set the container height explicitly
-      <div className="map-container" style={{ height: "100vh", width: "100%" }}>
-        <GoogleMapReact
-          defaultCenter={
-            this.props.center
-            // bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
-          }
-          defaultZoom={this.props.zoom}
-        >
-          {deliveriesList &&
-            deliveriesList.map(delivery => {
-              return (
-                <DeliveryLocation
-                  lat={Number(delivery.latitude)}
-                  lng={Number(delivery.longitude)}
-                  text={delivery.store_name}
-                />
-              );
-            })}
-        </GoogleMapReact>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12" style={{ height: "100vh", width: "100%" }}>
+            <GoogleMapReact
+              defaultCenter={this.props.center}
+              bootstrapURLKeys={{
+                key: `AIzaSyB6r4wxcBwqP9n7hMlG8x8mfbV0p47tzr0
+`,
+                language: "en"
+              }}
+              defaultZoom={this.props.zoom}
+            >
+              {deliveriesList &&
+                deliveriesList.map(delivery => {
+                  return (
+                    <DeliveryLocation
+                      lat={Number(delivery.latitude)}
+                      lng={Number(delivery.longitude)}
+                      text={delivery.store_name}
+                    />
+                  );
+                })}
+            </GoogleMapReact>
+          </div>
+        </div>
       </div>
     );
   }

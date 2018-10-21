@@ -43,6 +43,7 @@ class Home extends Component {
                 })}
             </div>
           </div>
+          <br />
           <div>
             <DeliveryMap />
           </div>
