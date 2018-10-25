@@ -30,9 +30,9 @@
   margin: 0;
 }
 
-.navbar-brand:hover {
+/* .navbar-brand:hover {
   background: tan;
-}
+} */
 
 .navbar .navbar-default {
   padding-top: 0.5em 0.5em;
@@ -40,7 +40,7 @@
 }
 
 .navbar-header {
-  background-color: rgb(187, 250, 230);
+  /* background-color: rgb(187, 250, 230); */
 }
 
 .navbar-collapse .collapse .show {
@@ -55,26 +55,27 @@
 }
 
 .fas {
-  color: blue;
+  /* color: blue; */
 }
 
 hr {
   margin-top: -1.8px;
   margin-bottom: auto;
   border: 0;
-  border-top: 1px solid #812881;
+  border-top: 1px solid #463946;
+  padding-top: 10px;
 }
 
-.mr-auto {
+/* .mr-auto {
   margin-right: auto !important;
   background-color: rgb(218, 252, 254);
-}
+} */
 
-.navbar-brand {
+/* .navbar-brand {
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: 0;
-}
+  margin-top: 0; */
+/* } */
 
 .navbar-brand a {
   cursor: pointer;

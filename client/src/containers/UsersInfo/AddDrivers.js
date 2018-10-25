@@ -1,120 +1,122 @@
-import React, { Component } from "react";
-import { addDrivers } from "../../helpers/api";
+import React, { Component } from 'react'
+import { addDrivers } from '../../helpers/api'
 
 class addNewDrivers extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
-      name: "",
-      email: "",
-      password: "",
-      city: "",
-      postcode: "",
-      role: ""
-    };
+      name: '',
+      email: '',
+      password: '',
+      city: '',
+      postcode: '',
+      role: ''
+    }
   }
 
   onchange = input => {
-    console.log(input.target.name);
-    console.log(input.target.value);
-    const state = this.state;
-    state[input.target.name] = input.target.value;
-    this.setState(state);
-  };
+    console.log(input.target.name)
+    console.log(input.target.value)
+    const state = this.state
+    state[input.target.name] = input.target.value
+    this.setState(state)
+  }
 
   onSubmit = input => {
-    input.preventDefault();
-    const { name, email, password, city, postcode, role } = this.state;
+    input.preventDefault()
+    const { name, email, password, city, postcode, role } = this.state
 
     addDrivers(name, email, password, city, postcode, role).then(result => {
-      this.props.history.push("/admin/drivers");
-    });
-  };
+      this.props.history.push('/admin/drivers')
+    })
+  }
 
-  render() {
+  render () {
     return (
-      <div className="container">
-        <div className="content">
+      <div className='container'>
+        <div className='content'>
           <div>
             <h3>Add Drivers</h3>
           </div>
 
-          <form className="add-drivers-form col-sm-2">
-            <div className="form-group">
-              <label for="name">Name</label>
+          <form className='add-drivers-form col-sm-6'>
+            <div className='form-group'>
+              <label for='name'>Name</label>
               <input
-                className="form-control"
-                type="text"
-                placeholder="Driver name"
-                name="name"
+                className='form-control'
+                type='text'
+                placeholder='Driver name'
+                name='name'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="email">E-mail</label>
+            <div className='form-group'>
+              <label for='email'>E-mail</label>
               <input
-                className="form-control"
-                type="E-mail"
-                placeholder="E-mail"
-                name="email"
+                className='form-control'
+                type='E-mail'
+                placeholder='E-mail'
+                name='email'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="email">Password</label>
+            <div className='form-group'>
+              <label for='email'>Password</label>
               <input
-                className="form-control"
-                type="password"
-                placeholder="Password"
-                name="password"
+                className='form-control'
+                type='password'
+                placeholder='Password'
+                name='password'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="city">City</label>
+            <div className='form-group'>
+              <label for='city'>City</label>
               <input
-                type="text"
-                placeholder="City"
-                name="City"
+                type='text'
+                placeholder='City'
+                name='City'
+                className='form-control'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="postcode">Postcode</label>
+            <div className='form-group'>
+              <label for='postcode'>Postcode</label>
               <input
-                type="text"
-                placeholder="Postcode"
-                name="postcode"
+                type='text'
+                className='form-control'
+                placeholder='Postcode'
+                name='postcode'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
+            <div className='form-group'>
               <div>
                 <label>
                   Role:
                   <select
-                    name="role"
-                    type="dropdown"
+                    name='role'
+                    type='dropdown'
                     onChange={this.onchange}
                     required
                   >
-                    <option value="none">None</option>
-                    <option value="driver">Driver</option>
+                    <option value='none'>None</option>
+                    <option value='driver'>Driver</option>
 
-                    <option value="admin">Admin</option>
+                    <option value='admin'>Admin</option>
                   </select>
                 </label>
               </div>
             </div>
             <div>
               <button
-                class="btn btn-lg btn-warning btn-block"
-                type="submit"
+                class='btn btn-lg btn-warning btn-block'
+                type='submit'
                 onClick={this.onSubmit}
               >
                 Save
@@ -123,8 +125,8 @@ class addNewDrivers extends Component {
           </form>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default addNewDrivers;
+export default addNewDrivers

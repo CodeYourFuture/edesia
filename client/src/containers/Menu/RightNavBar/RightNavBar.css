@@ -22,7 +22,7 @@ ul.navbar-right {
   min-width: 9rem;
   padding: 0.5rem 0;
   text-align: left;
-  background-color: #ffd;
+  /* background-color: #ffd; */
   border-radius: 10px;
   top: 2px;
 }
@@ -53,7 +53,7 @@ ul.navbar-right {
 .fa,
 .far,
 .fas {
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   margin-bottom: 10px;
   padding-left: 10px;
 }

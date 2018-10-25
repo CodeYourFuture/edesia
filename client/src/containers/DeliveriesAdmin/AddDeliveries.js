@@ -1,27 +1,27 @@
-import React, { Component } from "react";
-import { addDeliveries } from "../../helpers/api";
+import React, { Component } from 'react'
+import { addDeliveries } from '../../helpers/api'
 
 class AddDeliveries extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.state = {
-      address: "",
-      deadline: "",
-      status: "",
-      store_name: "",
-      latitude: "",
-      longitude: ""
-    };
+      address: '',
+      deadline: '',
+      status: '',
+      store_name: '',
+      latitude: '',
+      longitude: ''
+    }
   }
 
   onchange = input => {
-    const state = this.state;
-    state[input.target.name] = input.target.value;
-    this.setState(state);
-  };
+    const state = this.state
+    state[input.target.name] = input.target.value
+    this.setState(state)
+  }
 
   onSubmit = input => {
-    input.preventDefault();
+    input.preventDefault()
     const {
       address,
       deadline,
@@ -29,7 +29,7 @@ class AddDeliveries extends Component {
       store_name,
       latitude,
       longitude
-    } = this.state;
+    } = this.state
 
     addDeliveries(
       address,
@@ -39,99 +39,101 @@ class AddDeliveries extends Component {
       latitude,
       longitude
     ).then(result => {
-      this.props.history.push("/admin/Deliveries");
-    });
-  };
+      this.props.history.push('/admin/Deliveries')
+    })
+  }
 
-  render() {
+  render () {
     return (
-      <div className="container">
-        <div className="content">
+      <div className='container'>
+        <div className='content'>
           <div>
             <h3>Schedule a Delivery</h3>
           </div>
 
-          <form className="add-deliveries-form col-sm-2">
-            <div className="form-group">
-              <label for="store_name">Store name</label>
+          <form className='col-sm-6'>
+            <div className='form-group'>
+              <label for='store_name'>Store name</label>
               <input
-                className="form-control"
-                type="text"
-                placeholder="Store name"
-                name="store_name"
+                className='form-control'
+                type='text'
+                placeholder='Store name'
+                name='store_name'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="address">Address</label>
+            <div className='form-group'>
+              <label for='address'>Address</label>
               <input
-                className="form-control"
-                type="address"
-                placeholder="Address"
-                name="address"
+                className='form-control'
+                type='address'
+                placeholder='Address'
+                name='address'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="latitude">Latitude</label>
+            <div className='form-group'>
+              <label for='latitude'>Latitude</label>
               <input
-                className="form-control"
-                type="text"
-                placeholder="Latitude"
-                name="latitude"
+                className='form-control'
+                type='text'
+                placeholder='Latitude'
+                name='latitude'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="longitude">Longitude</label>
+            <div className='form-group'>
+              <label for='longitude'>Longitude</label>
               <input
-                className="form-control"
-                type="text"
-                placeholder="Longitude"
-                name="longitude"
+                className='form-control'
+                type='text'
+                placeholder='Longitude'
+                name='longitude'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
-              <label for="deadline">Deadline</label>
+            <div className='form-group'>
+              <label for='deadline'>Deadline</label>
               <input
-                type="date"
-                placeholder="Deadline"
-                name="deadline"
+                type='date'
+                className='form-control'
+                placeholder='Deadline'
+                name='deadline'
                 onChange={this.onchange}
                 required
               />
             </div>
-            <div className="form-group">
+            <div className='form-group'>
               <div>
                 <label>
                   Status:
                   <select
-                    name="status"
-                    type="dropdown"
+                    className='form-control'
+                    name='status'
+                    type='dropdown'
                     onChange={this.onchange}
                     required
                   >
-                    <option value="None">None</option>
-                    <option value="Available">Available</option>
+                    <option value='None'>None</option>
+                    <option value='Available'>Available</option>
 
-                    <option value="Pending">Pending</option>
+                    <option value='Pending'>Pending</option>
 
-                    <option value="Delivered">Delivered</option>
+                    <option value='Delivered'>Delivered</option>
 
-                    <option value="Cancelled">Cancelled</option>
+                    <option value='Cancelled'>Cancelled</option>
                   </select>
                 </label>
               </div>
             </div>
             <div>
               <button
-                class="btn btn-lg btn-warning btn-block"
-                type="submit"
+                class='btn btn-lg btn-warning btn-block'
+                type='submit'
                 onClick={this.onSubmit}
               >
                 Save
@@ -140,8 +142,8 @@ class AddDeliveries extends Component {
           </form>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default AddDeliveries;
+export default AddDeliveries

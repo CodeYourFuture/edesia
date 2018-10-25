@@ -1,13 +1,24 @@
-import React from "react";
-import "./deliveryCard.css";
-import { Link } from "react-router-dom";
+import React from 'react'
+import './deliveryCard.css'
+import { Link } from 'react-router-dom'
 
 const deliveryCard = props => (
-  <div className="delivery-card col-sm-12 col-md-3 ">
-    <h3>
-      <Link to={`/deliveries/${props.deliveryId}`}>{props.storeName}</Link>
-    </h3>
+  <div class='col-sm-4 col-12'>
+    <div class='card'>
+      <div class='card-body'>
+        <h5 class='card-title'>{props.storeName}</h5>
+        <p class='card-text'>
+          A new delivery waiting to be picked up at {props.storeName}
+        </p>
+        <Link
+          className='btn btn-success'
+          to={`/deliveries/${props.deliveryId}`}
+        >
+          View Details
+        </Link>
+      </div>
+    </div>
   </div>
-);
+)
 
-export default deliveryCard;
+export default deliveryCard

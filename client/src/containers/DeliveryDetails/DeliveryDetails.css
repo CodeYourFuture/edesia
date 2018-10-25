@@ -3,7 +3,7 @@ h4 {
   margin: 20px;
 }
 .delivery-details {
-  background-color: lightgoldenrodyellow;
+  border-color: lightgoldenrodyellow;
   border: solid 2px;
   padding: 15px;
   border-radius: 10px;
