@@ -1,14 +1,81 @@
-.navbar-collapse > .navbar-nav > .navbar-brand:not(:last-child) {
+.navbar-nav > .navbar-brand:not(:last-child) {
   border-right: solid 1.3px;
   padding: 0;
   margin: 3px;
 }
 
-.navbar navbar-expand-lg navbar-light bg-light {
+@media only screen and (max-width: 992px) {
+  .navbar-nav > .navbar-brand:not(:last-child) {
+    border-right: 0;
+  }
+}
+
+.navbar .navbar-expand-lg .navbar-light .bg-light {
   padding-top: 0;
   padding-bottom: 0;
 }
 
+.bg-light {
+  padding: 0;
+  width: 100%;
+}
+
+.navbar {
+  padding-bottom: 2px;
+}
+
 .navbar-brand {
   text-transform: uppercase;
+  font-size: 18px;
+  margin: 0;
+}
+
+.navbar-brand:hover {
+  background: tan;
+}
+
+.navbar .navbar-default {
+  padding-top: 0.5em 0.5em;
+  border: 0px;
+}
+
+.navbar-header {
+  background-color: rgb(187, 250, 230);
+}
+
+.navbar-collapse .collapse .show {
+  border: 1px solid;
+}
+
+.nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0rem;
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+}
+
+.fas {
+  color: blue;
+}
+
+hr {
+  margin-top: -1.8px;
+  margin-bottom: auto;
+  border: 0;
+  border-top: 1px solid #812881;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+  background-color: rgb(218, 252, 254);
+}
+
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+.navbar-brand a {
+  cursor: pointer;
 }

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import HighlightedLink from "../../components/HighlightedLink/HighlightedLink";
 import { withRouter, Link } from "react-router-dom";
 import Logo from "../../components/Logo";
 import "./Menu.css";
+import RightNavBar from "../Menu/RightNavBar/RightNavBar";
 
 class Menu extends Component {
   state = {
@@ -34,97 +34,92 @@ class Menu extends Component {
     localStorage.removeItem("jwtToken");
     window.location = "/";
   };
+
   goToDriverRegistration = () => {
     this.props.history.push("/register");
   };
+
   render() {
     const token = localStorage.getItem("jwtToken");
     const { role: userRole } = this.state;
+
     return (
-      <div>
-        {!token ? (
-          <HighlightedLink
-            text="Register as driver"
-            onClick={this.goToDriverRegistration}
-          />
-        ) : null}
-        <Logo />
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
+      <header className="navbar-header">
+        <div className="navbar navbar-default">
+          <div className="navbar-left">
+            <div className="navbar-logo ">
+              <Logo />
+            </div>
+            <nav className="navbar-nav navbar-expand-lg navbar-light bg-light">
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapsibleContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon" />
+              </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="navbar-brand active">
-                <Link to="/" className="nav-link">
-                  home
-                </Link>
-              </li>
+              <div className="collapse navbar-collapse" id="collapsibleContent">
+                <ul className="navbar-nav mr-auto">
+                  <li className="navbar-brand active ">
+                    <Link to="/" className="nav-link ">
+                      <i className="fas fa-home " /> home
+                    </Link>
+                  </li>
 
-              {token && userRole === "admin" ? (
-                <li className="navbar-brand">
-                  <Link to="/admin" className="nav-link ">
-                    edesia admin
-                  </Link>
-                </li>
-              ) : null}
+                  {token && userRole === "admin" ? (
+                    <li className="navbar-brand">
+                      <Link to="/admin" className="nav-link ">
+                        <i class="fas fa-user-cog" /> admin
+                      </Link>
+                    </li>
+                  ) : null}
 
-              <li className="navbar-brand">
-                <Link to="/deliveries" className="nav-link">
-                  deliveries
-                </Link>
-              </li>
-              {token && userRole === "driver" ? (
-                <li className="navbar-brand">
-                  <Link to="/mydeliveries" className="nav-link">
-                    my deliveries
-                  </Link>
-                </li>
-              ) : null}
-              {!token ? (
-                <li className="navbar-brand">
-                  <Link to="/login" className="nav-link">
-                    login
-                  </Link>
-                </li>
-              ) : null}
-              {!token ? (
-                <li className="navbar-brand">
-                  <Link to="/register" className="nav-link">
-                    register
-                  </Link>
-                </li>
-              ) : null}
-              {token && userRole === "driver" ? (
-                <li className="navbar-brand">
-                  <Link to="/profile" className="nav-link">
-                    profile
-                  </Link>
-                </li>
-              ) : null}
-              {token ? (
-                <li className="navbar-brand">
-                  <button
-                    className=" nav-link btn btn-outline-primary"
-                    onClick={this.logout}
-                  >
-                    logout
-                  </button>
-                </li>
-              ) : null}
-            </ul>
+                  <li className="navbar-brand">
+                    <Link to="/deliveries" className="nav-link">
+                      <i className="fas fa-truck" /> deliveries
+                    </Link>
+                  </li>
+                  {token && userRole === "driver" ? (
+                    <li className="navbar-brand">
+                      <Link to="/mydeliveries" className="nav-link">
+                        my deliveries
+                      </Link>
+                    </li>
+                  ) : null}
+                  {!token ? (
+                    <li className="navbar-brand">
+                      <Link to="/login" className="nav-link">
+                        <i className="fas fa-key" /> login
+                      </Link>
+                    </li>
+                  ) : null}
+                  {token ? (
+                    <li className="navbar-brand">
+                      <a className="nav-link" onClick={this.logout}>
+                        <i className="fas fa-lock" /> logout
+                      </a>
+                    </li>
+                  ) : null}
+                  {!token ? (
+                    <li className="navbar-brand">
+                      <Link to="/register" className="nav-link">
+                        <i className="fas fa-user-plus" /> register
+                      </Link>
+                    </li>
+                  ) : null}
+                </ul>
+              </div>
+
+              <RightNavBar />
+            </nav>
           </div>
-        </nav>
-      </div>
+        </div>
+      </header>
     );
   }
 }

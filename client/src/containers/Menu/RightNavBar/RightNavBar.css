@@ -1,0 +1,85 @@
+.navbar-fas {
+  text-transform: capitalize;
+  font-size: 14px;
+  display: block;
+}
+
+.navbar-fas a:hover {
+  background-color: #f1f1f1;
+  display: block;
+  text-decoration: none;
+}
+
+ul.navbar-right {
+  position: fixed;
+  right: 20px;
+  top: 4%;
+}
+
+.dropdown-menu {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 0.7rem 0 0;
+  min-width: 9rem;
+  padding: 0.5rem 0;
+  text-align: left;
+  background-color: #ffd;
+  border-radius: 10px;
+  top: 2px;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  float: left;
+  right: -1px;
+  top: 30px;
+}
+
+.navbar-nav.mr-auto {
+  margin-right: auto !important;
+  width: 100%;
+  border: none;
+}
+
+.dropdown,
+.dropleft,
+.dropright,
+.dropup {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+
+.fa,
+.far,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.navbar-relative-top {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  visibility: hidden;
+}
+
+.dropdown-toggle.logged-in::after {
+  visibility: visible;
+  position: relative;
+  float: right;
+  right: -5px;
+  top: -22px;
+}
+
+.navbar-toggler {
+  padding: 0.25rem 0.75rem;
+  width: 60px;
+  font-size: 1.5rem;
+  line-height: 1;
+  background-color: #00000024;
+  border: 2px solid black;
+  border-radius: 0.25rem;
+}

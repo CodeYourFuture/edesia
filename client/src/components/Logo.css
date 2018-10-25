@@ -3,7 +3,9 @@
   font-style: italic;
   font-weight: bolder;
   font-size: 45px;
-  margin-left: 30px;
+  margin-left: 5px;
+  height: 48px;
+  margin-bottom: 5px;
 }
 
 .logo {
